@@ -1,6 +1,689 @@
-let amountSlider = document.getElementById('amountRange');
-let amountText = document.getElementById('amountText');
-amountSlider.addEventListener('input', calculateAmount);
+//  -------------------------------------   ARRAYS   -------------------------------------  //
+
+//      TREASURE VALUES        //
+let IndivCR04Array = [
+    '5d6 cp',
+    '4d6 sp',
+    '3d6 ep',
+    '3d6 gp',
+    '1d6 pp'
+];
+
+let IndivCR510Array = [
+    '4d6 x 100 cp + 1d6 x 10 ep',
+    '6d6 x 10 sp + 2d6 x 10 gp',
+    '1d6 x 100 ep + 2d6 x 10 gp',
+    '4d6 x 10 gp',
+    '2d6 x 10 gp + 3d6 pp'
+];
+
+let IndivCR1116Array = [
+    '4d6 x 100 sp + 1d6 x 100 gp',
+    '1d6 x 100 ep + 1d6 x 100 gp',
+    '2d6 x 100 gp + 1d6 x 10 pp',
+    '2d6 x 100 gp + 2d6 x 10 pp'
+];
+
+let IndivCR17Array = [
+    '2d6 x 1000 ep + 8d6 x 100 gp',
+    '1d6 x 1000 gp + 1d6 x 100 pp',
+    '1d6 x 1000 gp + 2d6 x 100 pp',
+];
+
+// A ROLL ON THIS TABLE ALWAYS INCLUDES TrhoardCR04Array[0] EXCEPT TrhoardCR04Array[0]
+let TrhoardCR04Array = ['6d6 x 100 cp + 3d6 x 100 sp + 2d6 x 10 gp',
+    '2d6 10 gp gems',
+    '2d4 25 gp art objects',
+    '2d6 50 gp gems',
+    '2d6 10 gp gems + Roll 1d6 times on Magic Item Table A.',
+    '2d4 25 gp art objects + Roll 1d6 times on Magic Item Table A.',
+    '2d6 50 gp gems + Roll 1d6 times on Magic Item Table A.',
+    '2d6 10 gp gems + Roll 1d6 times on Magic Item Table B.',
+    '2d4 25 gp art objects + Roll 1d6 times on Magic Item Table B.',
+    '2d6 50 gp gems + Roll 1d6 times on Magic Item Table B.',
+    '2d6 10 gp gems + Roll 1d6 times on Magic Item Table C.',
+    '2d4 25 gp art objects + Roll 1d6 times on Magic Item Table C.',
+    '2d6 50 gp gems + Roll 1d6 times on Magic Item Table C.',
+    '2d4 25 gp art objects + Roll 1d6 times on Magic Item Table F.',
+    '2d6 50 gp gems	+ Roll 1d6 times on Magic Item Table F.',
+    '2d4 25 gp art objects + Roll 1d6 times on Magic Item Table G.',
+    '2d6 50 gp gems + Roll 1d6 times on Magic Item Table G.',
+];
+
+// A ROLL ON THIS TABLE ALWAYS INCLUDES TrhoardCR510Array[0] EXCEPT TrhoardCR510Array[0]
+let TrhoardCR510Array = ['2d6 x 100 cp + 2d6 x 1000 sp + 6d6 x 100 gp + 3d6 x 10 pp',
+    '2d4 25 gp art objects + 3d6(10) 50 gp gem',
+    '3d6 100 gp gems',
+    '2d4 25 gp art objects',
+    '2d4 25 gp art objects + Roll 1d6 times on Magic Item Table A.',
+    '3d6 50 gp gems	+ Roll 1d6 times on Magic Item Table A.',
+    '3d6 100 gp gems + Roll 1d6 times on Magic Item Table A.',
+    '2d4 250 gp art objects + Roll 1d6 times on Magic Item Table A.',
+    '2d4 25 gp art objects + Roll 1d4 times on Magic Item Table B.',
+    '3d6 50 gp g ems + Roll 1d4 times on Magic Item Table B.',
+    '3d6 100 gp gems + Roll 1d4 times on Magic Item Table B.',
+    '2d4 250 gp art objects + Roll 1d4 times on Magic Item Table B.',
+    '2d4 25 gp art objects + Roll 1d4 times on Magic Item Table C.',
+    '3d6(l 0) 50 gp gems + Roll 1d4 times on Magic Item Table C.',
+    '3d6 100 gp gems + Roll 1d4 times on Magic Item Table C.',
+    '2d4 250 gp art objects + Roll 1d4 times on Magic Item Table C.',
+    '2d4 25 gp art objects + Roll once on Magic Item Table D.',
+    '3d6 50 gp gems + Roll once on Magic Item Table D.',
+    '3d6 100 gp gems + Roll once on Magic Item Table D.',
+    '2d4 250 gp art objects + Roll once on Magic Item Table D.',
+    '2d4 25 gp art objects + Roll 1d4 times on Magic Item Table F.',
+    '3d6 50 gp gems + Roll 1d4 times on Magic Item Table F.',
+    '3d6 100 gp gems + Roll 1d4 times on Magic Item Table F.',
+    '2d4 250 gp art objects + Roll 1d4 times on Magic Item Table F.',
+    '3d6 100 gp gems + Roll 1d4 times on Magic Item Table G.',
+    '2d4 250 gp art objects + Roll 1d6 times on Magic Item Table G.',
+    '3d6 100 gp gems + Roll once on Magic Item Table H.',
+    '2d4 250 gp art objects + Roll once on Magic Item Table H.',
+];
+
+// A ROLL ON THIS TABLE ALWAYS INCLUDES TrhoardCR1116Array[0] EXCEPT TrhoardCR1116Array[0]
+let TrhoardCR1116Array = ['4d6 X 1000 gp + 5d6 x 100 pp',
+    '2d4 250 gp art objects',
+    '2d4 750 gp art objects',
+    '3d6 500 gp gems',
+    '3d6 1,000 gp gems',
+    '2d4 250 gp art objects + Roll 1d4 times on Magic Item Table A and 1d6 times on Magic Item Table B.',
+    '2d4 750 gp art objects + Roll 1d4 times on Magic Item Table A and 1d6 times on Magic Item Table B.',
+    '3d6 500 gp gems + Roll 1d4 times on Magic Item Table A and 1d6 times on Magic Item Table B.',
+    '3d6 1,000 gp gems + Roll 1d4 times on Magic Item Table A and 1d6 times on Magic Item Table B.',
+    '2d4 250 gp art objects + Roll 1d6 times on Magic Item Table C.',
+    '2d4 750 gp art objects + Roll 1d6 times on Magic Item Table C.',
+    '3d6 500 gp gems + Roll 1d6 times on Magic Item Table C.',
+    '3d6 1,000 gp gems + Roll 1d6 times on Magic Item Table C.',
+    '2d4 250 gp art objects + Roll 1d4 times on Magic Item Table D.',
+    '2d4 750 gp art objects + Roll 1d4 times on Magic Item Table D.',
+    '3d6 500 gp gems + Roll 1d4 times on Magic Item Table D.',
+    '3d6 1,000 gp gems + Roll 1d4 times on Magic Item Table D.',
+    '2d4 250 gp art objects + Roll once on Magic Item Table E.',
+    '2d4 750 gp art objects + Roll once on Magic Item Table E.',
+    '3d6 500 gp gems + Roll once on Magic Item Table E.',
+    '3d6 1,000 gp gems + Roll once on Magic Item Table E.',
+    '2d4 250 gp art objects + Roll once on Magic Item Table F and 1d4 times on Magic Item Table G.',
+    '2d4 750 gp art objects + Roll once on Magic Item Table F and 1d4 times on Magic Item Table G.',
+    '3d6 500 gp gems + Roll once on Magic Item Table F and 1d4 times on Magic Item Table G.',
+    '3d6 1,000 gp gems + Roll once on Magic Item Table F and 1d4 times on Magic Item Table G.',
+    '2d4 250 gp art objects + Roll1d4 times on Magic Item Table H.',
+    '2d4 750 gp art objects + Roll 1d4 times on Magic Item Table H.',
+    '3d6 500 gp gems + Roll 1d4 times on Magic Item Table H.',
+    '3d6 1,000 gp gems + Roll 1d4 times on Magic Item Table H.',
+    '2d4 250 gp art objects + Roll once on Magic Item Table I.',
+    '3d6 500 gp gems + Roll once on Magic Item Table I.',
+    '3d6 1,000 gp gems + Roll once on Magic Item Table I.',
+    '3d6 1,000 gp gems + Roll once on Magic Item Table I.',
+];
+
+// A ROLL ON THIS TABLE ALWAYS INCLUDES TrhoardCR17Array[0] EXCEPT TrhoardCR17Array[0]
+let TrhoardCR17Array = ['12d6 X 1000 gp + 8d6 x 1000 pp',
+    '3d6 1, 000 gp gems + Roll 1d8 times on Magic Item Table C.',
+    '1d10 2,500 gp art objects + Roll 1d8 times on Magic Item Table C.',
+    '1d4 7,500 gp art objects + Roll 1d8 times on Magic Item Table C.',
+    '1d8 5,000 gp gems + Roll 1d8 times on Magic Item Table C.',
+    '3d6 1,000 gp gems + Roll 1d6 times on Magic Item Table D.',
+    '1dl0 2,500 gp art objects + Roll 1d6 times on Magic Item Table D.',
+    '1d4 7, 500 gp art objects + Roll 1d6 times on Magic Item Table D.',
+    '1d8 5,000 gp gems + Roll 1d6 times on Magic Item Table D.',
+    '3d6 1,000 gp gems + Roll 1d6 times on Magic Item Table E.',
+    '1d10 2,500 gp art objects + Roll1d6 times on Magic Item Table E.',
+    '1d4 7,500 gp art objects + Roll 1d6 times on Magic Item Table E.',
+    '1d8 5, 000 gp gems + Roll 1d6 times on Magic Item Table E.',
+    '3d6 1,000 gp gems + Roll 1d4 times on Magic Item Table G.',
+    '1d10 2,500 gp art objects + Roll 1d4 times on Magic Item Table G.',
+    '1d4 7,500 gp art objects + Roll1d4 times on Magic Item Table G.',
+    '1d8 5,000 gp gems + Roll 1d4 times on Magic Item Table G.',
+    '3d6 1,000 gp gems + Roll 1d4 times on Magic Item Table H.',
+    'ld10 2,500 gp art objects + Roll 1d4 times on Magic Item Table H.',
+    '1d4 7,500 gp art objects + Roll 1d4 times on Magic Item Table H.',
+    '1d8 5,000 gp gems + Roll 1d4 times on Magic Item Table H.',
+    '3d6 1,000 gp gems + Roll 1d4 times on Magic Item Table I.',
+    '1d10 2,500 gp art objects + Roll 1d4 times on Magic Item Table I.',
+    'ld4 7,500 gp art objects + Roll once on Magic Item Table F and 1d4 times on Magic Item Table G.',
+    '1d8 5,000 gp gems + Roll 1d4 times on Magic Item Table I.',
+];
+
+//      GEMS        //
+let gem10gp = [
+    'Azurite (opaque mottled deep blue)',
+    'Banded agate (translucent striped brown, blue, white, or red)',
+    'Blue quartz (transparent pale blue)',
+    'Eye agate (translucent circles of gray, white, brown, blue, or green)',
+    'Hematite (opaque gray-black)',
+    'Lapis lazuli (opaque light and dark blue with yellow flecks)',
+    'Malachite (opaque striated light and dark green)',
+    'Moss agate (translucent pink or yellow-white with mossy gray or green markings)',
+    'Obsidian (opaque black)',
+    'Rhodochrosite (opaque light pink)',
+    'Tiger eye (translucent brown with golden center)',
+    'Turquoise (opaque light blue-green)'
+];
+
+let gem50gp = [
+    'Bloodstone (opaque dark gray with red flecks)',
+    'Carnelian (opaque orange to red-brown)',
+    'Chalcedony (opaque white)',
+    'Chrysoprase (translucent green)',
+    'Citrine (transparent pale yellow-brown)',
+    'Jasper (opaque blue, black, or brown)',
+    'Moonstone (translucent white with pale blue glow)',
+    'Onyx (opaque bands of black and white, or pure black or white)',
+    'Quartz (transparent white, smoky gray, or yellow)',
+    'Sardonyx (opaque bands of red and white)',
+    'Star rose quartz (translucent rosy stone with white star-shaped center)',
+    'Zircon (transparent pale blue-green)'
+];
+
+let gem500gp = [
+    'Alexandrite (transparent dark green)',
+    'Aquamarine (transparent pale blue-green)',
+    'Black pearl (opaque pure black)',
+    'Blue spinel (transparent deep blue)',
+    'Peridot (transparent rich olive green)',
+    'Topaz (transparent golden yellow)'
+];
+
+let gem1000gp = [
+    'Black opal (translucent dark green with black mottling and golden flecks)',
+    'Blue sapphire (transparent blue-white to medium blue)',
+    'Emerald (transparent deep bright green)',
+    'Fire opal (translucent fiery red)',
+    'Opal (translucent pale blue with green and golden mottling)',
+    'Star ruby (translucent ruby with white star-shaped center)',
+    'Star sapphire (translucent blue sapphire with white star-shaped center)',
+    'Yellow sapphire (transparent fiery yellow or yellow green)'
+];
+
+let gem5000gp = [
+    'Black sapphire (translucent lustrous black with glowing highlights)',
+    'Diamond (transparent blue-white, canary, pink, brown, or blue)',
+    'Jacinth (transparent fiery orange)',
+    'Ruby (transparent clear red to deep crimson)',
+];
+
+let gemArray = [gem10gp, gem50gp, gem500gp, gem1000gp, gem5000gp];
+
+//      ART OBJECTS     //
+
+let art25gp = [
+    'Silver ewer',
+    'Carved bone statuette',
+    'Small gold bracelet',
+    'Cloth-of-gold vestments',
+    'Black velvet mask stitched with silver thread',
+    'Copper chalice with silver filigree',
+    'Pair of engraved bone dice',
+    'Small mirror set in a painted wooden frame',
+    'Embroidered silk handkerchief',
+    'Gold locket with a painted portrait inside',
+];
+
+let art250gp = [
+    'Gold ring set with bloodstones',
+    'Carved ivory statuette',
+    'Large gold bracelet',
+    'Silver necklace with a gemstone pendant',
+    'Bronze crown',
+    'Silk robe with gold embroidery',
+    'Large well-made tapestry',
+    'Brass mug with jade inlay',
+    'Box of turquoise animal figurines',
+    'Gold bird cage with electrum filigree',
+];
+
+let art750gp = [
+    'Silver chalice set with moonstones',
+    'Silver-plated steellongsword with jet set in hilt',
+    'Carved harp of exotic wood with ivory inlay and zircon gems',
+    'Small gold idol',
+    'Gold dragon comb set with red garnets as eyes',
+    'Bottle stopper cork embossed with gold leaf and set with amethysts',
+    'Ceremonial electrum dagger with a black pearl in the pommel',
+    'Silver and gold brooch',
+    'Obsidian statuette with gold fittings and inlay',
+    'Painted gold war mask',
+];
+
+let art2500gp = [
+    'Fine gold chain set with a fire opal',
+    'Old masterpiece painting',
+    'Embroidered silk and velvet mantle set with numerous moonstones',
+    'Platinum bracelet set with a sapphire',
+    'Embroidered glove set with jewel chips',
+    'Jeweled anklet',
+    'Gold music box',
+    'Gold circlet set with four aquamarines',
+    'Eye patch with a mock eye set in blue sapphire andmoonstone',
+    'A necklace string of small pink pearls',
+];
+
+let art7500gp = [
+    'Jeweled gold crown',
+    'Jeweled platinum ring',
+    'Small gold statuette set with rubies',
+    'Gold cup set with emeralds',
+    'Gold jewelry box with platinum filigree',
+    "Painted gold child's sarcophagus",
+    'Jade game board with solid gold playing pieces',
+    'Bejeweled ivory drinking horn with gold filigree',
+];
+
+let artArray = [art25gp, art250gp, art750gp, art2500gp, art7500gp];
+
+//      MAGIC ITEMS        //
+
+let magicTableA = [
+    'Potion of healing',
+    'Spell scroll (cantrip)',
+    'Potion of climbing',
+    'Spell scroll (1st level)',
+    'Spell scroll (2nd level)',
+    'Potion of greater healing',
+    'Bag of holding',
+    'Driftglobe'
+];
+
+let magicTableB = [
+    'Potion of greater healing',
+    'Potion of fire breath',
+    'Potion of resistance',
+    'Ammunition, +1',
+    'Potion of animal friendship',
+    'Potion of hill giant strength',
+    'Potion of growth',
+    'Potion of water breathing',
+    'Spell scroll (2nd level)',
+    'Spell scroll (3rd level)',
+    'Bag of holding',
+    "Keoghtom's ointment",
+    'Oil of slipperiness',
+    'Dust of disappearance',
+    'Dust of dryness',
+    'Dust of sneezing and choking',
+    'Elemental gem',
+    'Philter of love',
+    'Alchemy jug',
+    'Cap of water breathing',
+    'Cloak of the manta ray',
+    'Driftglobe',
+    'Goggles of night',
+    'Helm of comprehending languages',
+    'Immovable rod',
+    'Lantern of revealing',
+    "Mariner's armor",
+    'Mithral armor',
+    'Potion of poison',
+    'Ring of swimming',
+    'Robe of useful items',
+    'Rope of climbing',
+    'Saddle of the cavalier',
+    'Wand of magic detection',
+    'Wand of secrets',
+];
+
+let magicTableC = [
+    'Potion of superior healing',
+    'Spell scroll (4thlevel)',
+    'Ammunition, +2',
+    'Potion of clairvoyance',
+    'Potion of diminution',
+    'Potion of gaseous form',
+    'Potion of frost giant strength',
+    'Potion of stone giant strength',
+    'Potion of heroism',
+    'Potion of invulnerability',
+    'Potion of mind reading',
+    'Spell scroll (5thlevel)',
+    'Elixir of health',
+    'Oil of etherealness',
+    'Potion of fire giant strength',
+    "Quaal's feather token",
+    'Scroll of protection',
+    'Bag of beans',
+    'Bead of force',
+    'Chime of opening',
+    'Decanter of endless water',
+    'Eyes of minute seeing',
+    'Folding boat',
+    "Heward's handy haversack",
+    'Horseshoes of speed',
+    'Necklace of fireballs',
+    'Periapt of health',
+    'Sending Stones',
+];
+
+let magicTableD = [
+	'Potion of supreme healing',
+	'Potion of invisibility',
+	'Potion of speed',
+	'Spell scroll(6thlevel)',
+	'Spell scroll(7thlevel)',
+	'Ammunition, +3',
+	'Oil of sharpness',
+	'Potion of flying',
+	'Potion of cloud giant strength',
+	'Potion of longevity',
+	'Potion of vitality',
+	'Spell scroll(8thlevel)',
+	'Horseshoes of a zephyr',
+	"Nolzur's marvelous pigments",
+	'Bag of devouring',
+	'Portable hole',
+];
+
+let magicTableE = [
+	'Spell scroll (8thlevel)',
+	'Potion of storm giant strength',
+	'Poti on of supreme healing',
+	'Spell scroll (9st level)',
+	'Universal solvent',
+	'Arrow of slaying',
+	'Sovereign glue',
+];
+
+let magicTableF = [
+	'Weapon, +1',
+	'Shield,+ 1',
+	'Sentinel shield',
+	'Amulet of proof against detection and location',
+	'Boots of elvenkind',
+	'Boots of striding and springing',
+	'Bracers of archery',
+	'Brooch of shielding',
+	'Broom of flying',
+	'Cloak of elvenkind',
+	'Cloak of protection',
+	'Gauntlets of ogre power',
+	'Hat of disguise',
+	'Javelin of lightning',
+	'Pearl of power',
+	'Rod of the pact keeper, + 1',
+	'Slippers of spider climbing',
+	'Staff of the adder',
+	'Staff of the python',
+	'Sword of vengeance',
+	'Trident of fish command',
+	'Wand of magic missiles',
+	'Wand of the war mage, + 1',
+	'Wand of web',
+	'Weapon of warning',
+	'Adamantine armor (chain mail)',
+	'Adamantine armor (chain shirt)',
+	'Adamantine armor (scale mail)',
+	'Bag of tricks (gray)',
+	'Bag of tricks (rust)',
+	'Bag of tricks (tan)',
+	'Boots of the winterlands',
+	'Circlet of blasting',
+	'Deck of illusions',
+	'Eversmoking bottle',
+	'Eyes of charming',
+	'Eyes of the eagle',
+	'Figurine of wondrous power (silver raven)',
+	'Gem of brightness',
+	'Gloves of missile snaring',
+	'Gloves of swimming and climbing',
+	'Gloves of thievery',
+	'Headband of intellect',
+	'Helm of telepathy',
+	'Instrument of the bards (Doss lute)',
+	'Instrument of the bards (Fochlucan bandore)',
+	'Instrument of the bards (Mac-Fuimidh cittern)',
+	'Medallion of thoughts',
+	'Necklace of adaptation',
+	'Periapt of wound closure',
+	'Pipes of haunting',
+	'Pipes of the sewers',
+	'Ring of jumping',
+	'Ring of mind shielding',
+	'Ring of warmth',
+	'Ring of water walking',
+	'Quiver of Ehlonna',
+	'Stone of good luck',
+	'Wind fan',
+	'Winged boots',
+];
+
+let FoWP = [
+    'Bronze griffon',
+    'Ebony fly',
+    'Golden lions',
+    'Ivory goats',
+    'Marble elephant',
+    'Onyx dog',
+    'Serpentine owl',
+];
+
+let magicTableG = [
+	'Weapon, +2',
+	'Figurine of wondrous power (roll d8)' + FoWP,
+	'Adamantine armor (breastplate)',
+	'Adamantine armor (splint)',
+	'Amulet of health',
+	'Armor of vulnerability',
+	'Arrow-catching shield',
+	'Belt of dwarvenkind',
+	'Belt of hill giant strength',
+	'Berserker axe',
+	'Boots of levitation',
+	'Boots of speed',
+	'Bowl of commanding water elementals',
+	'Bracers of defense',
+	'Brazier of commanding fire elementals',
+	'Cape of the mountebank',
+	'Censer of controlling air elementals',
+	'Armor, +1 chain mail',
+	'Armor of resistance (chain mail)',
+	'Armor of resistance (chain shirt)',
+	'Armor,+ 1 chain shirt',
+	'Cloak of displacement',
+	'Cloak of the bat',
+	'Cube of force',
+	"Daern's instant fortress",
+	'Dagger of venom',
+	'Dimensional shackles',
+	'Dragon slayer',
+	'Elven chain',
+	'Flame tongue',
+	'Gem of seeing',
+	'Giant slayer',
+	'Clamoured studded leather',
+	'Helm of teleportation',
+	'Horn of blasting',
+	'Horn of Valhalla (silver or brass)',
+	'Instrument of the bards (Canaithmandolin)',
+	'Instrument ofthe bards (Cii lyre)',
+	'loun stone (awareness)',
+	'loun stone (protection)',
+	'loun stone (reserve)',
+	'loun stone (sustenance)',
+	'Iron bands of Bilarro',
+	'Armor, + 1 leather',
+	'Armor of resistance (leather)',
+	'Mace of disruption',
+	'Mace of smiting',
+	'Mace of terror',
+	'Mantle of spell resistance',
+	'Necklace of prayer beads',
+	'Periapt of proof against poison',
+	'Ring of animal influence',
+	'Ring of evasion',
+	'Ring of feather falling',
+	'Ring of free action',
+	'Ring of protection',
+	'Ring of resistance',
+	'Ring of spell storing',
+	'Ring of the ram',
+	'Ring of X-ray vision',
+	'Robe of eyes',
+	'Rod of rulership',
+	'Rod of the pact keeper, +2',
+	'Rope of entanglement',
+	'Armor, +1 scale mail',
+	'Armor of resistance (scale mail)',
+	'Shield, +2',
+	'Shield of missile attraction',
+	'Staff of charming',
+	'Staff of healing',
+	'Staff of swarming insects',
+	'Staff of the woodlands',
+	'Staff of withering',
+	'Stone of controlling earthelementals',
+	'Sun blade',
+	'Sword of life stealing',
+	'Sword of wounding',
+	'Tentacle rod',
+	'Vicious weapon',
+	'Wand of binding',
+	'Wand of enemy detection',
+	'Wand of fear',
+	'Wand of fireballs',
+	'Wand of lightning bolts',
+	'Wand of paralysis',
+	'Wand of the war mage, +2',
+	'Wand of wonder',
+	'Wings of flying',
+];
+
+let magicTableH = [
+	'Weapon, +3',
+	'Amulet of the planes',
+	'Carpet of flying',
+	'Crystal ball (very rare version)',
+	'Ring of regeneration',
+	'Ring of shooting stars',
+	'Ring of telekinesis',
+	'Robe of scintillating colors',
+	'Robe of stars',
+	'Rod of absorption',
+	'Rod of alertness',
+	'Rod of security',
+	'Rod of the pact keeper, +3',
+	'Scimitar of speed',
+	'Shield, +3',
+	'Staff of fire',
+	'Staff of frost',
+	'Staff of power',
+	'Staff of striking',
+	'Staff of thunder and lightning',
+	'Sword of sharpnes',
+	'Wand of polymorph',
+	'Wand of the war mage, + 3',
+	'Adamantine armor (half plate)',
+	'Adamantine armor (plate)',
+	'Animated shield',
+	'Belt of fire giant strength',
+	'Belt of frost (or stone) giant strength',
+	'Armor, + 1 breastplate',
+	'Armor of resistance (breastplate)',
+	'Candle of invocation',
+	'Armor, +2 chain mail',
+	'Armor, +2 chain shirt',
+	'Cloak of arachnida',
+	'Dancing sword',
+	'Demon armor',
+	'Dragon scale mail',
+	'Dwarven plate',
+	'Dwarven thrower',
+	'Efreeti bottle',
+	'Figurine of wondrous power (obsidian steed)',
+	'Frost brand',
+	'Helm of brilliance',
+	'Horn ofValhalla (bronze)',
+	'Instrument of the bards (Anstruthharp)',
+	'loun stone (absorption)',
+	'loun stone (agility)',
+	'loun stone (fortitude)',
+	'loun stone (insight)',
+	'loun stone (intellect)',
+	'loun stone (leadership)',
+	'loun stone (strength)',
+	'Armor, +2 leather',
+	'Manual of bodily health',
+	'Manual of gainful exercise',
+	'Manual of golems',
+	'Manual of quickness of action',
+	'Mirror of life trapping',
+	'Nine lives stealer',
+	'Oathbow',
+	'Armor, +2 scale mail',
+	'Spellguard shield',
+	'Armor, + 1 splint',
+	'Armor of resistance (splint)',
+	'Armor, + 1 studded leather',
+	'Armor of resistance (studded leather)',
+	'Tome of clear thought',
+	'Tome of leadership and influence',
+	'Tome of understanding',
+];
+
+let magicArmor = [
+    '+2 half plate',
+    '+2 plate',
+    '+3 studded leather',
+    '+3 breastplate',
+    '+3 splint',
+    '+3 half plate',
+    '+3 plate',
+];
+
+let magicTableI = [
+	'Defender',
+	'Hammer of thunderbolts',
+	'Sword of answering',
+	'Holy avenger',
+	'Ring of djinni summoning',
+	'Ring of invisibility',
+	'Ring of spell turning',
+	'Rod of lordly might',
+	'Vorpal sword',
+	'Belt of cloud giant strength',
+	'Armor, +2 breastplate',
+	'Armor, +3 chain mail',
+	'Armor, +3 chain shirt',
+	'Cloak of invisibility',
+	'Crystal ball (legendary version)',
+	'Armor, + 1 half plate',
+	'Iron flask',
+	'Armor, +3 leather',
+	'Armor, +1 plate',
+	'Robe of the archmagi',
+	'Rod of resurrection',
+	'Armor, +1 scale mail',
+	'Scarab of protection',
+	'Armor, +2 splint',
+	'Armor, +2 studded leather',
+	'Well of many worlds',
+    'Magic armor (roll dl2)' + magicArmor,
+	'Apparatus of Kwalish',
+	'Armor of invulnerability',
+	'Belt of storm giant strength',
+	'Cubic gate',
+	'Deck of many things',
+	'Efreeti chain',
+	'Armor of resistance (half plate)',
+	'Horn ofValhalla (iron)',
+	'Instrument of the bards (OIIamh harp)',
+	'loun stone (greater absorption)',
+	'loun stone (mastery)',
+	'loun stone (regeneration)',
+	'Plate armor of etherealness',
+	'Plate armor of resistance',
+	'Ring of air elemental command',
+	'Ring of earthelemental command',
+	'Ring of fire elemental command',
+	'Ring of three wishes',
+	'Ring of water elemental command',
+	'Sphere of annihilation',
+	'Talisman of pure good',
+	'Talisman of the sphere',
+	'Talisman of ultimate evil',
+	'Tome of the stilled tongue',
+];
+
+//      SLIDERS       //
 let amountArray = [
     'No treasure (or angry DM)',
     'Pocket change',
@@ -12,16 +695,28 @@ let amountArray = [
     'Quite some treasure',
     'A lot of treasure',
     'Insane amount of treasure',
-    'Treasure Hoard'];
+    'Treasure Hoard'
+];
 
-let crSlider = document.getElementById('crRange');
-let crText = document.getElementById('crText');
-crSlider.addEventListener('input', calculateCr);
 let crArray = [
     '0 - 4',
     '5 - 10',
     '11 - 16',
-    '17+'];
+    '17+'
+];
+
+//  -------------------------------------   SCRIPTS   -------------------------------------  //
+
+
+let amountSlider = document.getElementById('amountRange');
+let amountText = document.getElementById('amountText');
+amountSlider.addEventListener('input', calculateAmount);
+
+
+let crSlider = document.getElementById('crRange');
+let crText = document.getElementById('crText');
+crSlider.addEventListener('input', calculateCr);
+
 
 document.getElementById('generateBtn').addEventListener('click', generateTreasure);
 let treasureText = document.getElementById('treasureText');
@@ -37,5 +732,5 @@ function calculateCr() {
 }
 
 function generateTreasure() {
-
+    console.log(artArray);
 }
