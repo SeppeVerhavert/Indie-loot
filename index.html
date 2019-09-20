@@ -18,9 +18,9 @@
                 <div class="slidercontainer">
                     <div class="levelslider">
                         <div class="sliderrange">
-                            <div class="rangevalue start">Level</div>
+                            <div id="crText">Challenge Rating 0 - 4</div>
                         </div>
-                        <input type="range" min="0" max="100" value="5" step="5" class="slider" id="levelRange">
+                        <input type="range" min="0" max="3" value="0" step="1" class="slider" id="crRange">
                     </div>
                     <div class="amountslider">
                         <div class="sliderrange">
@@ -32,7 +32,7 @@
             </div>
             <button type="button" class="btn btn-primary" id="generateBtn">Generate treasure</button>
             <div class="textfield">
-                <p id="treasuretext">Here comes some text.</p>
+                <p id="treasureText">Here comes some text.</p>
             </div>
         </div>
     </div>
@@ -50,6 +50,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+    <script src="assets/javascript/library.js"></script>
     <script src="assets/javascript/script.js"></script>
 </body>
 
