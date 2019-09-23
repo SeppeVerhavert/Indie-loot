@@ -6,7 +6,7 @@
 .container {
     margin: auto;
     padding: 0;
-    margin-top: 20%;
+    margin-top: 10%;
     text-align: center;
     font-size: 22px;
 }
@@ -53,16 +53,14 @@
 }
 
 #generateBtn {
+    width: 80%;
+    font-size: 22px;
     margin-top: 25px;
     background-color: #ff4444;
 }
 
 #treasureText {
     margin-top: 25px;
-}
-
-.radioContainer {
-
 }
 
 /* Customize the label (the container) */
