@@ -623,209 +623,209 @@ let TrhoardCR510Array = [
 ];
 
 let TrhoardCR1116Array = [
-    '4d6 X 1000 gp + 5d6 x 100 pp',
-    '4d6 X 1000 gp + 5d6 x 100 pp',
-    '4d6 X 1000 gp + 5d6 x 100 pp',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 2d4 250 gp art objects',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 2d4 250 gp art objects',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 2d4 250 gp art objects',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 2d4 750 gp art objects',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 2d4 750 gp art objects',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 2d4 750 gp art objects',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 2d4 750 gp art objects',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 3d6 500 gp gems',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 3d6 500 gp gems',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 3d6 1,000 gp gems',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 3d6 1,000 gp gems',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 3d6 1,000 gp gems',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 2d4 250 gp art objects + Roll 1d4 times on Magic Item Table A and 1d6 times on Magic Item Table B.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 2d4 250 gp art objects + Roll 1d4 times on Magic Item Table A and 1d6 times on Magic Item Table B.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 2d4 250 gp art objects + Roll 1d4 times on Magic Item Table A and 1d6 times on Magic Item Table B.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 2d4 250 gp art objects + Roll 1d4 times on Magic Item Table A and 1d6 times on Magic Item Table B.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 2d4 750 gp art objects + Roll 1d4 times on Magic Item Table A and 1d6 times on Magic Item Table B.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 2d4 750 gp art objects + Roll 1d4 times on Magic Item Table A and 1d6 times on Magic Item Table B.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 2d4 750 gp art objects + Roll 1d4 times on Magic Item Table A and 1d6 times on Magic Item Table B.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 2d4 750 gp art objects + Roll 1d4 times on Magic Item Table A and 1d6 times on Magic Item Table B.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 3d6 500 gp gems + Roll 1d4 times on Magic Item Table A and 1d6 times on Magic Item Table B.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 3d6 500 gp gems + Roll 1d4 times on Magic Item Table A and 1d6 times on Magic Item Table B.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 3d6 500 gp gems + Roll 1d4 times on Magic Item Table A and 1d6 times on Magic Item Table B.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 3d6 1,000 gp gems + Roll 1d4 times on Magic Item Table A and 1d6 times on Magic Item Table B.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 3d6 1,000 gp gems + Roll 1d4 times on Magic Item Table A and 1d6 times on Magic Item Table B.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 3d6 1,000 gp gems + Roll 1d4 times on Magic Item Table A and 1d6 times on Magic Item Table B.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 2d4 250 gp art objects + Roll 1d6 times on Magic Item Table C.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 2d4 250 gp art objects + Roll 1d6 times on Magic Item Table C.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 2d4 250 gp art objects + Roll 1d6 times on Magic Item Table C.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 2d4 250 gp art objects + Roll 1d6 times on Magic Item Table C.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 2d4 250 gp art objects + Roll 1d6 times on Magic Item Table C.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 2d4 250 gp art objects + Roll 1d6 times on Magic Item Table C.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 2d4 750 gp art objects + Roll 1d6 times on Magic Item Table C.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 2d4 750 gp art objects + Roll 1d6 times on Magic Item Table C.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 2d4 750 gp art objects + Roll 1d6 times on Magic Item Table C.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 2d4 750 gp art objects + Roll 1d6 times on Magic Item Table C.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 2d4 750 gp art objects + Roll 1d6 times on Magic Item Table C.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 3d6 500 gp gems + Roll 1d6 times on Magic Item Table C.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 3d6 500 gp gems + Roll 1d6 times on Magic Item Table C.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 3d6 500 gp gems + Roll 1d6 times on Magic Item Table C.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 3d6 500 gp gems + Roll 1d6 times on Magic Item Table C.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 3d6 500 gp gems + Roll 1d6 times on Magic Item Table C.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 3d6 1,000 gp gems + Roll 1d6 times on Magic Item Table C.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 3d6 1,000 gp gems + Roll 1d6 times on Magic Item Table C.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 3d6 1,000 gp gems + Roll 1d6 times on Magic Item Table C.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 3d6 1,000 gp gems + Roll 1d6 times on Magic Item Table C.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 3d6 1,000 gp gems + Roll 1d6 times on Magic Item Table C.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 2d4 250 gp art objects + Roll 1d4 times on Magic Item Table D.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 2d4 250 gp art objects + Roll 1d4 times on Magic Item Table D.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 2d4 250 gp art objects + Roll 1d4 times on Magic Item Table D.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 2d4 250 gp art objects + Roll 1d4 times on Magic Item Table D.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 2d4 750 gp art objects + Roll 1d4 times on Magic Item Table D.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 2d4 750 gp art objects + Roll 1d4 times on Magic Item Table D.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 2d4 750 gp art objects + Roll 1d4 times on Magic Item Table D.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 2d4 750 gp art objects + Roll 1d4 times on Magic Item Table D.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 3d6 500 gp gems + Roll 1d4 times on Magic Item Table D.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 3d6 500 gp gems + Roll 1d4 times on Magic Item Table D.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 3d6 500 gp gems + Roll 1d4 times on Magic Item Table D.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 3d6 500 gp gems + Roll 1d4 times on Magic Item Table D.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 3d6 1,000 gp gems + Roll 1d4 times on Magic Item Table D.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 3d6 1,000 gp gems + Roll 1d4 times on Magic Item Table D.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 3d6 1,000 gp gems + Roll 1d4 times on Magic Item Table D.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 3d6 1,000 gp gems + Roll 1d4 times on Magic Item Table D.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 2d4 250 gp art objects + Roll once on Magic Item Table E.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 2d4 250 gp art objects + Roll once on Magic Item Table E.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 2d4 750 gp art objects + Roll once on Magic Item Table E.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 2d4 750 gp art objects + Roll once on Magic Item Table E.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 3d6 500 gp gems + Roll once on Magic Item Table E.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 3d6 500 gp gems + Roll once on Magic Item Table E.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 3d6 1,000 gp gems + Roll once on Magic Item Table E.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 3d6 1,000 gp gems + Roll once on Magic Item Table E.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 2d4 250 gp art objects + Roll once on Magic Item Table F and 1d4 times on Magic Item Table G.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 2d4 250 gp art objects + Roll once on Magic Item Table F and 1d4 times on Magic Item Table G.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 2d4 750 gp art objects + Roll once on Magic Item Table F and 1d4 times on Magic Item Table G.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 2d4 750 gp art objects + Roll once on Magic Item Table F and 1d4 times on Magic Item Table G.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 3d6 500 gp gems + Roll once on Magic Item Table F and 1d4 times on Magic Item Table G.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 3d6 500 gp gems + Roll once on Magic Item Table F and 1d4 times on Magic Item Table G.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 3d6 1,000 gp gems + Roll once on Magic Item Table F and 1d4 times on Magic Item Table G.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 3d6 1,000 gp gems + Roll once on Magic Item Table F and 1d4 times on Magic Item Table G.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 2d4 250 gp art objects + Roll1d4 times on Magic Item Table H.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 2d4 250 gp art objects + Roll1d4 times on Magic Item Table H.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 2d4 250 gp art objects + Roll1d4 times on Magic Item Table H.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 2d4 750 gp art objects + Roll 1d4 times on Magic Item Table H.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 2d4 750 gp art objects + Roll 1d4 times on Magic Item Table H.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 2d4 750 gp art objects + Roll 1d4 times on Magic Item Table H.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 3d6 500 gp gems + Roll 1d4 times on Magic Item Table H.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 3d6 500 gp gems + Roll 1d4 times on Magic Item Table H.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 3d6 1,000 gp gems + Roll 1d4 times on Magic Item Table H.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 3d6 1,000 gp gems + Roll 1d4 times on Magic Item Table H.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 2d4 250 gp art objects + Roll once on Magic Item Table I.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 2d4 250 gp art objects + Roll once on Magic Item Table I.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 3d6 500 gp gems + Roll once on Magic Item Table I.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 3d6 500 gp gems + Roll once on Magic Item Table I.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 3d6 1,000 gp gems + Roll once on Magic Item Table I.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 3d6 1,000 gp gems + Roll once on Magic Item Table I.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 3d6 1,000 gp gems + Roll once on Magic Item Table I.',
-    '4d6 X 1000 gp + 5d6 x 100 pp + 3d6 1,000 gp gems + Roll once on Magic Item Table I.',
+    '4d6 x 1000 gp + 5d6 x 100 pp',
+    '4d6 x 1000 gp + 5d6 x 100 pp',
+    '4d6 x 1000 gp + 5d6 x 100 pp',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 2d4 250 gp art objects',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 2d4 250 gp art objects',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 2d4 250 gp art objects',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 2d4 750 gp art objects',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 2d4 750 gp art objects',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 2d4 750 gp art objects',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 2d4 750 gp art objects',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 3d6 500 gp gems',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 3d6 500 gp gems',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 3d6 1,000 gp gems',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 3d6 1,000 gp gems',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 3d6 1,000 gp gems',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 2d4 250 gp art objects + Roll 1d4 times on Magic Item Table A and 1d6 times on Magic Item Table B.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 2d4 250 gp art objects + Roll 1d4 times on Magic Item Table A and 1d6 times on Magic Item Table B.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 2d4 250 gp art objects + Roll 1d4 times on Magic Item Table A and 1d6 times on Magic Item Table B.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 2d4 250 gp art objects + Roll 1d4 times on Magic Item Table A and 1d6 times on Magic Item Table B.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 2d4 750 gp art objects + Roll 1d4 times on Magic Item Table A and 1d6 times on Magic Item Table B.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 2d4 750 gp art objects + Roll 1d4 times on Magic Item Table A and 1d6 times on Magic Item Table B.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 2d4 750 gp art objects + Roll 1d4 times on Magic Item Table A and 1d6 times on Magic Item Table B.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 2d4 750 gp art objects + Roll 1d4 times on Magic Item Table A and 1d6 times on Magic Item Table B.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 3d6 500 gp gems + Roll 1d4 times on Magic Item Table A and 1d6 times on Magic Item Table B.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 3d6 500 gp gems + Roll 1d4 times on Magic Item Table A and 1d6 times on Magic Item Table B.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 3d6 500 gp gems + Roll 1d4 times on Magic Item Table A and 1d6 times on Magic Item Table B.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 3d6 1,000 gp gems + Roll 1d4 times on Magic Item Table A and 1d6 times on Magic Item Table B.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 3d6 1,000 gp gems + Roll 1d4 times on Magic Item Table A and 1d6 times on Magic Item Table B.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 3d6 1,000 gp gems + Roll 1d4 times on Magic Item Table A and 1d6 times on Magic Item Table B.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 2d4 250 gp art objects + Roll 1d6 times on Magic Item Table C.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 2d4 250 gp art objects + Roll 1d6 times on Magic Item Table C.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 2d4 250 gp art objects + Roll 1d6 times on Magic Item Table C.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 2d4 250 gp art objects + Roll 1d6 times on Magic Item Table C.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 2d4 250 gp art objects + Roll 1d6 times on Magic Item Table C.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 2d4 250 gp art objects + Roll 1d6 times on Magic Item Table C.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 2d4 750 gp art objects + Roll 1d6 times on Magic Item Table C.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 2d4 750 gp art objects + Roll 1d6 times on Magic Item Table C.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 2d4 750 gp art objects + Roll 1d6 times on Magic Item Table C.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 2d4 750 gp art objects + Roll 1d6 times on Magic Item Table C.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 2d4 750 gp art objects + Roll 1d6 times on Magic Item Table C.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 3d6 500 gp gems + Roll 1d6 times on Magic Item Table C.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 3d6 500 gp gems + Roll 1d6 times on Magic Item Table C.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 3d6 500 gp gems + Roll 1d6 times on Magic Item Table C.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 3d6 500 gp gems + Roll 1d6 times on Magic Item Table C.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 3d6 500 gp gems + Roll 1d6 times on Magic Item Table C.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 3d6 1,000 gp gems + Roll 1d6 times on Magic Item Table C.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 3d6 1,000 gp gems + Roll 1d6 times on Magic Item Table C.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 3d6 1,000 gp gems + Roll 1d6 times on Magic Item Table C.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 3d6 1,000 gp gems + Roll 1d6 times on Magic Item Table C.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 3d6 1,000 gp gems + Roll 1d6 times on Magic Item Table C.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 2d4 250 gp art objects + Roll 1d4 times on Magic Item Table D.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 2d4 250 gp art objects + Roll 1d4 times on Magic Item Table D.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 2d4 250 gp art objects + Roll 1d4 times on Magic Item Table D.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 2d4 250 gp art objects + Roll 1d4 times on Magic Item Table D.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 2d4 750 gp art objects + Roll 1d4 times on Magic Item Table D.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 2d4 750 gp art objects + Roll 1d4 times on Magic Item Table D.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 2d4 750 gp art objects + Roll 1d4 times on Magic Item Table D.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 2d4 750 gp art objects + Roll 1d4 times on Magic Item Table D.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 3d6 500 gp gems + Roll 1d4 times on Magic Item Table D.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 3d6 500 gp gems + Roll 1d4 times on Magic Item Table D.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 3d6 500 gp gems + Roll 1d4 times on Magic Item Table D.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 3d6 500 gp gems + Roll 1d4 times on Magic Item Table D.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 3d6 1,000 gp gems + Roll 1d4 times on Magic Item Table D.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 3d6 1,000 gp gems + Roll 1d4 times on Magic Item Table D.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 3d6 1,000 gp gems + Roll 1d4 times on Magic Item Table D.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 3d6 1,000 gp gems + Roll 1d4 times on Magic Item Table D.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 2d4 250 gp art objects + Roll once on Magic Item Table E.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 2d4 250 gp art objects + Roll once on Magic Item Table E.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 2d4 750 gp art objects + Roll once on Magic Item Table E.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 2d4 750 gp art objects + Roll once on Magic Item Table E.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 3d6 500 gp gems + Roll once on Magic Item Table E.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 3d6 500 gp gems + Roll once on Magic Item Table E.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 3d6 1,000 gp gems + Roll once on Magic Item Table E.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 3d6 1,000 gp gems + Roll once on Magic Item Table E.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 2d4 250 gp art objects + Roll once on Magic Item Table F and 1d4 times on Magic Item Table G.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 2d4 250 gp art objects + Roll once on Magic Item Table F and 1d4 times on Magic Item Table G.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 2d4 750 gp art objects + Roll once on Magic Item Table F and 1d4 times on Magic Item Table G.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 2d4 750 gp art objects + Roll once on Magic Item Table F and 1d4 times on Magic Item Table G.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 3d6 500 gp gems + Roll once on Magic Item Table F and 1d4 times on Magic Item Table G.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 3d6 500 gp gems + Roll once on Magic Item Table F and 1d4 times on Magic Item Table G.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 3d6 1,000 gp gems + Roll once on Magic Item Table F and 1d4 times on Magic Item Table G.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 3d6 1,000 gp gems + Roll once on Magic Item Table F and 1d4 times on Magic Item Table G.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 2d4 250 gp art objects + Roll1d4 times on Magic Item Table H.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 2d4 250 gp art objects + Roll1d4 times on Magic Item Table H.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 2d4 250 gp art objects + Roll1d4 times on Magic Item Table H.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 2d4 750 gp art objects + Roll 1d4 times on Magic Item Table H.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 2d4 750 gp art objects + Roll 1d4 times on Magic Item Table H.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 2d4 750 gp art objects + Roll 1d4 times on Magic Item Table H.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 3d6 500 gp gems + Roll 1d4 times on Magic Item Table H.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 3d6 500 gp gems + Roll 1d4 times on Magic Item Table H.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 3d6 1,000 gp gems + Roll 1d4 times on Magic Item Table H.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 3d6 1,000 gp gems + Roll 1d4 times on Magic Item Table H.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 2d4 250 gp art objects + Roll once on Magic Item Table I.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 2d4 250 gp art objects + Roll once on Magic Item Table I.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 3d6 500 gp gems + Roll once on Magic Item Table I.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 3d6 500 gp gems + Roll once on Magic Item Table I.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 3d6 1,000 gp gems + Roll once on Magic Item Table I.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 3d6 1,000 gp gems + Roll once on Magic Item Table I.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 3d6 1,000 gp gems + Roll once on Magic Item Table I.',
+    '4d6 x 1000 gp + 5d6 x 100 pp + 3d6 1,000 gp gems + Roll once on Magic Item Table I.',
 ];
 
 let TrhoardCR17Array = [
-    '12d6 X 1000 gp + 8d6 x 1000 pp',
-    '12d6 X 1000 gp + 8d6 x 1000 pp',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 3d6 1,000 gp gems + Roll 1d8 times on Magic Item Table C.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 3d6 1,000 gp gems + Roll 1d8 times on Magic Item Table C.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 3d6 1,000 gp gems + Roll 1d8 times on Magic Item Table C.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d10 2,500 gp art objects + Roll 1d8 times on Magic Item Table C.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d10 2,500 gp art objects + Roll 1d8 times on Magic Item Table C.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d10 2,500 gp art objects + Roll 1d8 times on Magic Item Table C.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d4 7,500 gp art objects + Roll 1d8 times on Magic Item Table C.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d4 7,500 gp art objects + Roll 1d8 times on Magic Item Table C.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d4 7,500 gp art objects + Roll 1d8 times on Magic Item Table C.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d8 5,000 gp gems + Roll 1d8 times on Magic Item Table C.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d8 5,000 gp gems + Roll 1d8 times on Magic Item Table C.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d8 5,000 gp gems + Roll 1d8 times on Magic Item Table C.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 3d6 1,000 gp gems + Roll 1d6 times on Magic Item Table D.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 3d6 1,000 gp gems + Roll 1d6 times on Magic Item Table D.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 3d6 1,000 gp gems + Roll 1d6 times on Magic Item Table D.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 3d6 1,000 gp gems + Roll 1d6 times on Magic Item Table D.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 3d6 1,000 gp gems + Roll 1d6 times on Magic Item Table D.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 3d6 1,000 gp gems + Roll 1d6 times on Magic Item Table D.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 3d6 1,000 gp gems + Roll 1d6 times on Magic Item Table D.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 3d6 1,000 gp gems + Roll 1d6 times on Magic Item Table D.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1dl0 2,500 gp art objects + Roll 1d6 times on Magic Item Table D.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1dl0 2,500 gp art objects + Roll 1d6 times on Magic Item Table D.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1dl0 2,500 gp art objects + Roll 1d6 times on Magic Item Table D.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1dl0 2,500 gp art objects + Roll 1d6 times on Magic Item Table D.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1dl0 2,500 gp art objects + Roll 1d6 times on Magic Item Table D.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1dl0 2,500 gp art objects + Roll 1d6 times on Magic Item Table D.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1dl0 2,500 gp art objects + Roll 1d6 times on Magic Item Table D.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1dl0 2,500 gp art objects + Roll 1d6 times on Magic Item Table D.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d4 7,500 gp art objects + Roll 1d6 times on Magic Item Table D.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d4 7,500 gp art objects + Roll 1d6 times on Magic Item Table D.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d4 7,500 gp art objects + Roll 1d6 times on Magic Item Table D.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d4 7,500 gp art objects + Roll 1d6 times on Magic Item Table D.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d4 7,500 gp art objects + Roll 1d6 times on Magic Item Table D.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d4 7,500 gp art objects + Roll 1d6 times on Magic Item Table D.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d4 7,500 gp art objects + Roll 1d6 times on Magic Item Table D.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d4 7,500 gp art objects + Roll 1d6 times on Magic Item Table D.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d8 5,000 gp gems + Roll 1d6 times on Magic Item Table D.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d8 5,000 gp gems + Roll 1d6 times on Magic Item Table D.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d8 5,000 gp gems + Roll 1d6 times on Magic Item Table D.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d8 5,000 gp gems + Roll 1d6 times on Magic Item Table D.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d8 5,000 gp gems + Roll 1d6 times on Magic Item Table D.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d8 5,000 gp gems + Roll 1d6 times on Magic Item Table D.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d8 5,000 gp gems + Roll 1d6 times on Magic Item Table D.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d8 5,000 gp gems + Roll 1d6 times on Magic Item Table D.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 3d6 1,000 gp gems + Roll 1d6 times on Magic Item Table E.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 3d6 1,000 gp gems + Roll 1d6 times on Magic Item Table E.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 3d6 1,000 gp gems + Roll 1d6 times on Magic Item Table E.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 3d6 1,000 gp gems + Roll 1d6 times on Magic Item Table E.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 3d6 1,000 gp gems + Roll 1d6 times on Magic Item Table E.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 3d6 1,000 gp gems + Roll 1d6 times on Magic Item Table E.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d10 2,500 gp art objects + Roll1d6 times on Magic Item Table E.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d10 2,500 gp art objects + Roll1d6 times on Magic Item Table E.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d10 2,500 gp art objects + Roll1d6 times on Magic Item Table E.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d10 2,500 gp art objects + Roll1d6 times on Magic Item Table E.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d10 2,500 gp art objects + Roll1d6 times on Magic Item Table E.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d10 2,500 gp art objects + Roll1d6 times on Magic Item Table E.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d4 7,500 gp art objects + Roll 1d6 times on Magic Item Table E.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d4 7,500 gp art objects + Roll 1d6 times on Magic Item Table E.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d4 7,500 gp art objects + Roll 1d6 times on Magic Item Table E.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d4 7,500 gp art objects + Roll 1d6 times on Magic Item Table E.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d4 7,500 gp art objects + Roll 1d6 times on Magic Item Table E.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d8 5,000 gp gems + Roll 1d6 times on Magic Item Table E.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d8 5,000 gp gems + Roll 1d6 times on Magic Item Table E.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d8 5,000 gp gems + Roll 1d6 times on Magic Item Table E.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d8 5,000 gp gems + Roll 1d6 times on Magic Item Table E.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d8 5,000 gp gems + Roll 1d6 times on Magic Item Table E.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 3d6 1,000 gp gems + Roll 1d4 times on Magic Item Table G.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d10 2,500 gp art objects + Roll 1d4 times on Magic Item Table G.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d4 7,500 gp art objects + Roll1d4 times on Magic Item Table G.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d8 5,000 gp gems + Roll 1d4 times on Magic Item Table G.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 3d6 1,000 gp gems + Roll 1d4 times on Magic Item Table H.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 3d6 1,000 gp gems + Roll 1d4 times on Magic Item Table H.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + ld10 2,500 gp art objects + Roll 1d4 times on Magic Item Table H.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + ld10 2,500 gp art objects + Roll 1d4 times on Magic Item Table H.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d4 7,500 gp art objects + Roll 1d4 times on Magic Item Table H.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d4 7,500 gp art objects + Roll 1d4 times on Magic Item Table H.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d8 5,000 gp gems + Roll 1d4 times on Magic Item Table H.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d8 5,000 gp gems + Roll 1d4 times on Magic Item Table H.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 3d6 1,000 gp gems + Roll 1d4 times on Magic Item Table I.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 3d6 1,000 gp gems + Roll 1d4 times on Magic Item Table I.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 3d6 1,000 gp gems + Roll 1d4 times on Magic Item Table I.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 3d6 1,000 gp gems + Roll 1d4 times on Magic Item Table I.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 3d6 1,000 gp gems + Roll 1d4 times on Magic Item Table I.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d10 2,500 gp art objects + Roll 1d4 times on Magic Item Table I.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d10 2,500 gp art objects + Roll 1d4 times on Magic Item Table I.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d10 2,500 gp art objects + Roll 1d4 times on Magic Item Table I.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d10 2,500 gp art objects + Roll 1d4 times on Magic Item Table I.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d10 2,500 gp art objects + Roll 1d4 times on Magic Item Table I.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + ld4 7,500 gp art objects + Roll once on Magic Item Table F and 1d4 times on Magic Item Table G.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + ld4 7,500 gp art objects + Roll once on Magic Item Table F and 1d4 times on Magic Item Table G.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + ld4 7,500 gp art objects + Roll once on Magic Item Table F and 1d4 times on Magic Item Table G.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + ld4 7,500 gp art objects + Roll once on Magic Item Table F and 1d4 times on Magic Item Table G.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + ld4 7,500 gp art objects + Roll once on Magic Item Table F and 1d4 times on Magic Item Table G.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d8 5,000 gp gems + Roll 1d4 times on Magic Item Table I.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d8 5,000 gp gems + Roll 1d4 times on Magic Item Table I.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d8 5,000 gp gems + Roll 1d4 times on Magic Item Table I.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d8 5,000 gp gems + Roll 1d4 times on Magic Item Table I.',
-    '12d6 X 1000 gp + 8d6 x 1000 pp + 1d8 5,000 gp gems + Roll 1d4 times on Magic Item Table I.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp',
+    '12d6 x 1000 gp + 8d6 x 1000 pp',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 3d6 1,000 gp gems + Roll 1d8 times on Magic Item Table C.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 3d6 1,000 gp gems + Roll 1d8 times on Magic Item Table C.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 3d6 1,000 gp gems + Roll 1d8 times on Magic Item Table C.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d10 2,500 gp art objects + Roll 1d8 times on Magic Item Table C.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d10 2,500 gp art objects + Roll 1d8 times on Magic Item Table C.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d10 2,500 gp art objects + Roll 1d8 times on Magic Item Table C.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d4 7,500 gp art objects + Roll 1d8 times on Magic Item Table C.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d4 7,500 gp art objects + Roll 1d8 times on Magic Item Table C.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d4 7,500 gp art objects + Roll 1d8 times on Magic Item Table C.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d8 5,000 gp gems + Roll 1d8 times on Magic Item Table C.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d8 5,000 gp gems + Roll 1d8 times on Magic Item Table C.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d8 5,000 gp gems + Roll 1d8 times on Magic Item Table C.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 3d6 1,000 gp gems + Roll 1d6 times on Magic Item Table D.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 3d6 1,000 gp gems + Roll 1d6 times on Magic Item Table D.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 3d6 1,000 gp gems + Roll 1d6 times on Magic Item Table D.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 3d6 1,000 gp gems + Roll 1d6 times on Magic Item Table D.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 3d6 1,000 gp gems + Roll 1d6 times on Magic Item Table D.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 3d6 1,000 gp gems + Roll 1d6 times on Magic Item Table D.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 3d6 1,000 gp gems + Roll 1d6 times on Magic Item Table D.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 3d6 1,000 gp gems + Roll 1d6 times on Magic Item Table D.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1dl0 2,500 gp art objects + Roll 1d6 times on Magic Item Table D.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1dl0 2,500 gp art objects + Roll 1d6 times on Magic Item Table D.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1dl0 2,500 gp art objects + Roll 1d6 times on Magic Item Table D.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1dl0 2,500 gp art objects + Roll 1d6 times on Magic Item Table D.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1dl0 2,500 gp art objects + Roll 1d6 times on Magic Item Table D.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1dl0 2,500 gp art objects + Roll 1d6 times on Magic Item Table D.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1dl0 2,500 gp art objects + Roll 1d6 times on Magic Item Table D.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1dl0 2,500 gp art objects + Roll 1d6 times on Magic Item Table D.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d4 7,500 gp art objects + Roll 1d6 times on Magic Item Table D.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d4 7,500 gp art objects + Roll 1d6 times on Magic Item Table D.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d4 7,500 gp art objects + Roll 1d6 times on Magic Item Table D.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d4 7,500 gp art objects + Roll 1d6 times on Magic Item Table D.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d4 7,500 gp art objects + Roll 1d6 times on Magic Item Table D.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d4 7,500 gp art objects + Roll 1d6 times on Magic Item Table D.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d4 7,500 gp art objects + Roll 1d6 times on Magic Item Table D.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d4 7,500 gp art objects + Roll 1d6 times on Magic Item Table D.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d8 5,000 gp gems + Roll 1d6 times on Magic Item Table D.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d8 5,000 gp gems + Roll 1d6 times on Magic Item Table D.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d8 5,000 gp gems + Roll 1d6 times on Magic Item Table D.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d8 5,000 gp gems + Roll 1d6 times on Magic Item Table D.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d8 5,000 gp gems + Roll 1d6 times on Magic Item Table D.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d8 5,000 gp gems + Roll 1d6 times on Magic Item Table D.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d8 5,000 gp gems + Roll 1d6 times on Magic Item Table D.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d8 5,000 gp gems + Roll 1d6 times on Magic Item Table D.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 3d6 1,000 gp gems + Roll 1d6 times on Magic Item Table E.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 3d6 1,000 gp gems + Roll 1d6 times on Magic Item Table E.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 3d6 1,000 gp gems + Roll 1d6 times on Magic Item Table E.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 3d6 1,000 gp gems + Roll 1d6 times on Magic Item Table E.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 3d6 1,000 gp gems + Roll 1d6 times on Magic Item Table E.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 3d6 1,000 gp gems + Roll 1d6 times on Magic Item Table E.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d10 2,500 gp art objects + Roll1d6 times on Magic Item Table E.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d10 2,500 gp art objects + Roll1d6 times on Magic Item Table E.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d10 2,500 gp art objects + Roll1d6 times on Magic Item Table E.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d10 2,500 gp art objects + Roll1d6 times on Magic Item Table E.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d10 2,500 gp art objects + Roll1d6 times on Magic Item Table E.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d10 2,500 gp art objects + Roll1d6 times on Magic Item Table E.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d4 7,500 gp art objects + Roll 1d6 times on Magic Item Table E.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d4 7,500 gp art objects + Roll 1d6 times on Magic Item Table E.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d4 7,500 gp art objects + Roll 1d6 times on Magic Item Table E.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d4 7,500 gp art objects + Roll 1d6 times on Magic Item Table E.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d4 7,500 gp art objects + Roll 1d6 times on Magic Item Table E.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d8 5,000 gp gems + Roll 1d6 times on Magic Item Table E.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d8 5,000 gp gems + Roll 1d6 times on Magic Item Table E.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d8 5,000 gp gems + Roll 1d6 times on Magic Item Table E.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d8 5,000 gp gems + Roll 1d6 times on Magic Item Table E.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d8 5,000 gp gems + Roll 1d6 times on Magic Item Table E.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 3d6 1,000 gp gems + Roll 1d4 times on Magic Item Table G.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d10 2,500 gp art objects + Roll 1d4 times on Magic Item Table G.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d4 7,500 gp art objects + Roll1d4 times on Magic Item Table G.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d8 5,000 gp gems + Roll 1d4 times on Magic Item Table G.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 3d6 1,000 gp gems + Roll 1d4 times on Magic Item Table H.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 3d6 1,000 gp gems + Roll 1d4 times on Magic Item Table H.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + ld10 2,500 gp art objects + Roll 1d4 times on Magic Item Table H.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + ld10 2,500 gp art objects + Roll 1d4 times on Magic Item Table H.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d4 7,500 gp art objects + Roll 1d4 times on Magic Item Table H.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d4 7,500 gp art objects + Roll 1d4 times on Magic Item Table H.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d8 5,000 gp gems + Roll 1d4 times on Magic Item Table H.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d8 5,000 gp gems + Roll 1d4 times on Magic Item Table H.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 3d6 1,000 gp gems + Roll 1d4 times on Magic Item Table I.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 3d6 1,000 gp gems + Roll 1d4 times on Magic Item Table I.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 3d6 1,000 gp gems + Roll 1d4 times on Magic Item Table I.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 3d6 1,000 gp gems + Roll 1d4 times on Magic Item Table I.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 3d6 1,000 gp gems + Roll 1d4 times on Magic Item Table I.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d10 2,500 gp art objects + Roll 1d4 times on Magic Item Table I.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d10 2,500 gp art objects + Roll 1d4 times on Magic Item Table I.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d10 2,500 gp art objects + Roll 1d4 times on Magic Item Table I.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d10 2,500 gp art objects + Roll 1d4 times on Magic Item Table I.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d10 2,500 gp art objects + Roll 1d4 times on Magic Item Table I.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + ld4 7,500 gp art objects + Roll once on Magic Item Table F and 1d4 times on Magic Item Table G.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + ld4 7,500 gp art objects + Roll once on Magic Item Table F and 1d4 times on Magic Item Table G.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + ld4 7,500 gp art objects + Roll once on Magic Item Table F and 1d4 times on Magic Item Table G.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + ld4 7,500 gp art objects + Roll once on Magic Item Table F and 1d4 times on Magic Item Table G.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + ld4 7,500 gp art objects + Roll once on Magic Item Table F and 1d4 times on Magic Item Table G.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d8 5,000 gp gems + Roll 1d4 times on Magic Item Table I.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d8 5,000 gp gems + Roll 1d4 times on Magic Item Table I.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d8 5,000 gp gems + Roll 1d4 times on Magic Item Table I.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d8 5,000 gp gems + Roll 1d4 times on Magic Item Table I.',
+    '12d6 x 1000 gp + 8d6 x 1000 pp + 1d8 5,000 gp gems + Roll 1d4 times on Magic Item Table I.',
 ];
 
 
@@ -1664,7 +1664,7 @@ let magicTableG = [
     'Ring of resistance',
     'Ring of spell storing',
     'Ring of the ram',
-    'Ring of X-ray vision',
+    'Ring of x-ray vision',
     'Robe of eyes',
     'Rod of rulership',
     'Rod of the pact keeper, +2',
@@ -1914,21 +1914,6 @@ let magicTableI = [
 
 //      SLIDERS       //
 
-
-let amountArray = [
-    'No treasure (or angry DM)',
-    'Pocket change',
-    'Even fewer treasure',
-    'Small amount of treasure',
-    'Slightly less treasure',
-    'Medium amount of treasure',
-    'Slightly more treasure',
-    'Quite some treasure',
-    'A lot of treasure',
-    'Insane amount of treasure',
-    'Treasure Hoard'
-];
-
 let crArray = [
     '0 - 4',
     '5 - 10',
@@ -1936,27 +1921,23 @@ let crArray = [
     '17+'
 ];
 
-//  -------------------------------------   SCRIPTS   -------------------------------------  //
+
+//  -------------------------------------   VARIABLES   -------------------------------------  //
 
 
-let amountSlider = document.getElementById('amountRange');
-let amountText = document.getElementById('amountText');
-amountSlider.addEventListener('input', calculateAmount);
+let radioType = document.getElementById('radioType')
 let treasureHoard = false;
-
 
 let crSlider = document.getElementById('crRange');
 let crText = document.getElementById('crText');
 crSlider.addEventListener('input', calculateCr);
 
-
 document.getElementById('generateBtn').addEventListener('click', generateTreasure);
 let treasureText = document.getElementById('treasureText');
 
-function calculateAmount() {
-    let range = document.getElementById("amountRange").value;
-    amountText.innerHTML = amountArray[range];
-}
+
+//  -------------------------------------   FUNCTIONS   -------------------------------------  //
+
 
 function calculateCr() {
     let range = document.getElementById("crRange").value;
@@ -1964,18 +1945,16 @@ function calculateCr() {
 }
 
 function generateTreasure() {
-    console.log(treasureHoard);
-    checkTH();
-    console.log(treasureHoard);
+    checkType();
     treasureText.innerHTML = checkCR();
-    console.log(treasureHoard);
+    parseValue();
 }
 
-function checkTH(){
-    if(amountText.innerHTML === "Treasure Hoard"){
-        treasureHoard = true;
-    } else {
+function checkType() {
+    if(radioType.checked){
         treasureHoard = false;
+    } else {
+        treasureHoard = true;
     }
 }
 
@@ -2012,4 +1991,32 @@ function checkCR() {
             return IndivCR17Array[rand];
         }
     }
+}
+
+function parseValue() {
+    let value = treasureText.innerHTML.split(' ');
+    if (value.length <= 2) {
+        let roll = value[0].split('d');
+        treasureText.innerHTML = rolld(roll[0]) + " " + value[1];
+    } else if (value.length <= 4) {
+        let roll = value[0].split('d');
+        treasureText.innerHTML = rolld(roll[0]) * value[2]+ " " + value[3];
+    } else if (value.length <= 7) {
+        let roll1 = value[0].split('d');
+        let roll2 = value[5].split('d');
+        treasureText.innerHTML =rolld(roll1[0]) * value[2]+ " " + value[3] + "<br>" + rolld(roll2[0]) + " " + value[6];
+    } else if (value.length <= 9) {
+        let roll1 = value[0].split('d');
+        let roll2 = value[5].split('d');
+        treasureText.innerHTML =rolld(roll1[0]) * value[2]+ " " + value[3] + "<br>" + rolld(roll2[0]) * value[7]+ " " + value[8];
+    }
+}
+
+function rolld(argument) {
+    let totalRoll = 0;
+    for (let i=0;i<argument;i++){
+        let roll = Math.floor(Math.random() * (7 - 1) + 1);
+        totalRoll += parseInt(roll);
+    }
+    return totalRoll;
 }
