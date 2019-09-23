@@ -2181,7 +2181,7 @@ let toolsArray = [
     'Herbalism kit',
     'Bagpipes',
     'Drum    ',
-    'Dulcimerp',
+    'Dulcimer',
     'Flute    ',
     'Lute',
     'Lyre',
@@ -2275,6 +2275,10 @@ let crSlider = document.getElementById('crRange');
 let crText = document.getElementById('crText');
 crSlider.addEventListener('input', calculateCr);
 
+document.getElementById('optionsBtn').addEventListener('click', toggleOptions);
+optionsDiv = document.getElementById('options');
+let toggle = true;
+
 document.getElementById('generateBtn').addEventListener('click', generateTreasure);
 let treasureText = document.getElementById('treasureText');
 
@@ -2287,12 +2291,24 @@ let toolBox = document.getElementById('tools');
 //  -------------------------------------   FUNCTIONS   -------------------------------------  //
 
 
+function toggleOptions(){
+    if(toggle === true){
+        toggle = false;
+        optionsDiv.style.display = "none";
+    } else {
+        toggle= true;
+        optionsDiv.style.display = "block";
+    }
+}
+
 function calculateCr() {
     let range = document.getElementById("crRange").value;
     crText.innerHTML = "Challenge Rating " + crArray[range];
 }
 
 function generateTreasure() {
+    toggle = true;
+    toggleOptions();
     checkType();
     treasureText.innerHTML = checkCR();
     parseValue();
@@ -2392,32 +2408,33 @@ function extraOptions() {
 }
 
 function addTrinket() {
-    let rand = Math.floor(Math.random() * (trinketArray.length + 100));
-    if (rand >= 100) {
-        treasureText.innerHTML += "<br><hr>" + trinketArray[rand - 100]
+    let length = trinketArray.length;
+    let rand = Math.floor(Math.random() * (4 * length));
+    if (rand >= length*3) {
+        treasureText.innerHTML += "<br><hr>" + trinketArray[rand - length*3]
     }
 }
 
 function addGear() {
     let length = gearArray.length;
-    let rand = Math.floor(Math.random() * (2 * length));
-    if (rand >= length) {
-        treasureText.innerHTML += "<br><hr>" + gearArray[rand - length]
+    let rand = Math.floor(Math.random() * (4 * length));
+    if (rand >= length*3) {
+        treasureText.innerHTML += "<br><hr>" + gearArray[rand - (length*3)]
     }
 }
 
 function addWeapon() {
     let length = weaponsarmorArray.length;
-    let rand = Math.floor(Math.random() * (2 * length));
-    if (rand >= length) {
-        treasureText.innerHTML += "<br><hr>" + weaponsarmorArray[rand - length]
+    let rand = Math.floor(Math.random() * (4 * length));
+    if (rand >= length*3) {
+        treasureText.innerHTML += "<br><hr>" + weaponsarmorArray[rand - (length*3)]
     }
 }
 
 function addToolkit() {
     let length = toolsArray.length;
-    let rand = Math.floor(Math.random() * (2 * length));
-    if (rand >= length) {
-        treasureText.innerHTML += "<br><hr>" + toolsArray[rand - length]
+    let rand = Math.floor(Math.random() * (4 * length));
+    if (rand >= length*3) {
+        treasureText.innerHTML += "<br><hr>" + toolsArray[rand - (length*3)]
     }
 }

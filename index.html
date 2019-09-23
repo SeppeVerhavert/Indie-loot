@@ -14,45 +14,48 @@
 <body>
     <div class="app">
         <div class="container">
+            <div id="options">
+                <div class="radioContainer">
+                    <label class="radioCheckbox">Individual Treasure
+                        <input id="radioType" type="radio" checked="checked" name="radio">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="radioCheckbox">Treasure Hoard
+                        <input type="radio" name="radio">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <div class="slidercontainer">
+                    <div class="levelslider">
+                        <div class="sliderrange">
+                            <div id="crText">Challenge Rating 0 - 4</div>
+                        </div>
+                        <input type="range" min="0" max="3" value="0" step="1" class="slider" id="crRange">
+                    </div>
+                </div>
+                <div class="checkboxContainer">
+                    <label class="checkBox">Interesting Trinkets
+                        <input id="trinkets" type="checkbox" checked="checked">
+                        <span class="checkBoxmark"></span>
+                    </label>
+                    <label class="checkBox">Adventuring Gear
+                        <input id="gear" type="checkbox">
+                        <span class="checkBoxmark"></span>
+                    </label>
+                    <label class="checkBox">Weapons & Armor
+                        <input id="weapons" type="checkbox">
+                        <span class="checkBoxmark"></span>
+                    </label>
+                    <label class="checkBox">Tools, Kits & Sets
+                        <input id="tools" type="checkbox">
+                        <span class="checkBoxmark"></span>
+                    </label>
+                </div>
+            </div>
+            <button type="button" class="btn btn-secondary" id="optionsBtn">Show/hide options</button>
             <button type="button" class="btn btn-danger" id="generateBtn">Generate treasure</button>
             <div class="textfield">
                 <p id="treasureText"></p>
-            </div>
-            <div class="radioContainer">
-                <label class="radioCheckbox">Individual Treasure
-                    <input id="radioType" type="radio" checked="checked" name="radio">
-                    <span class="checkmark"></span>
-                </label>
-                <label class="radioCheckbox">Treasure Hoard
-                    <input type="radio" name="radio">
-                    <span class="checkmark"></span>
-                </label>
-            </div>
-            <div class="slidercontainer">
-                <div class="levelslider">
-                    <div class="sliderrange">
-                        <div id="crText">Challenge Rating 0 - 4</div>
-                    </div>
-                    <input type="range" min="0" max="3" value="0" step="1" class="slider" id="crRange">
-                </div>
-            </div>
-            <div class="checkboxContainer">
-                <label class="checkBox">Interesting Trinkets
-                    <input id="trinkets" type="checkbox" checked="checked">
-                    <span class="checkBoxmark"></span>
-                </label>
-                <label class="checkBox">Adventuring Gear
-                    <input id="gear" type="checkbox">
-                    <span class="checkBoxmark"></span>
-                </label>
-                <label class="checkBox">Weapons & Armor
-                    <input id="weapons" type="checkbox">
-                    <span class="checkBoxmark"></span>
-                </label>
-                <label class="checkBox">Tools, Kits & Sets
-                    <input id="tools" type="checkbox">
-                    <span class="checkBoxmark"></span>
-                </label>
             </div>
         </div>
     </div>
