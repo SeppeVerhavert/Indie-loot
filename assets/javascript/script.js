@@ -2070,7 +2070,7 @@ let gearArray = [
     'Vial of Antitoxin',
     'Arcane focus (' + rollTable(arcaneFocus) + ')',
     'Backpack',
-    'Ball bearings(bag of 1, 000)',
+    'Bag of 1000 ball bearings',
     'Barrel	',
     'Basket',
     'Bedroll',
@@ -2080,7 +2080,7 @@ let gearArray = [
     'Book	',
     'Glass bottle',
     'Bucket',
-    'Caltrops(bag of 20)',
+    'Bag of 20 caltrops',
     'Candle',
     'Crossbow bolts case',
     'Map or scroll case',
@@ -2177,7 +2177,7 @@ let toolsArray = [
     'Dice set',
     'Dragonchess set',
     'Playing card set',
-    'Three - Dragon Ante set',
+    'Three-Dragon Ante set',
     'Herbalism kit',
     'Bagpipes',
     'Drum    ',
@@ -2211,7 +2211,7 @@ let weaponsarmorArray = [
     'Quarterstaff',
     'Sickle',
     'Spear',
-    'Crossbow',
+    'Crossbow (light)',
     'Dart',
     'Shortbow',
     'Sling',
@@ -2230,27 +2230,27 @@ let weaponsarmorArray = [
     'Scimitar',
     'Shortsword',
     'Trident',
-    'War',
+    'War Pick',
     'Warhammer',
     'Whip',
     'Blowgun',
-    'Crossbow',
-    'Crossbow',
+    'Crossbow (hand)',
+    'Crossbow (heavy)',
     'Longbow',
     'Net',
     'Shield',
-    'Padded Armor',
-    'Leather Armor',
-    'Studded leather Armor',
-    'Hide Armor',
+    'Padded armor',
+    'Leather armor',
+    'Studded leather armor',
+    'Hide armor',
     'Chain shirt',
-    'Scale mail Armor',
+    'Scale mail armor',
     'Breastplate',
-    'Half plate Armor',
-    'Ring mail Armor',
-    'Chain mail Armor',
-    'Splint Armor',
-    'Plate Armor',
+    'Half plate armor',
+    'Ring mail armor',
+    'Chain mail armor',
+    'Splint armor',
+    'Plate armor',
 ];
 
 
@@ -2415,5 +2415,9 @@ function addWeapon() {
 }
 
 function addToolkit() {
-
+    let length = toolsArray.length;
+    let rand = Math.floor(Math.random() * (2 * length));
+    if (rand >= length) {
+        treasureText.innerHTML += "<br><hr>" + toolsArray[rand - length]
+    }
 }
