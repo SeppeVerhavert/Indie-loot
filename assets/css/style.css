@@ -53,11 +53,15 @@
     background: #ff4444;
 }
 
-#generateBtn {
+.btn {
     width: 80%;
     font-size: 22px;
     margin-top: 25px;
     background-color: #ff4444;
+}
+
+#optionsBtn {
+    background-color: #ccc;
 }
 
 #treasureText {
