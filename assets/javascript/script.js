@@ -890,10 +890,10 @@ let gem5000gp = [
 ];
 
 let gemArray = [
-    gem10gp, 
-    gem50gp, 
-    gem500gp, 
-    gem1000gp, 
+    gem10gp,
+    gem50gp,
+    gem500gp,
+    gem1000gp,
     gem5000gp
 ];
 
@@ -2064,11 +2064,11 @@ let holySymbol = [
 
 let gearArray = [
     'Abacus',
-    'Acid(vial)	',
-    "Alchemist's fire (flask)",
-    'Ammunition' + ammunition,
-    'Antitoxin(vial)',
-    'Arcane focus' + arcaneFocus,
+    'Vial of Acid	',
+    "Flask of Alchemist's fire",
+    'Ammunition (' + rollTable(ammunition) + ')',
+    'Vial of Antitoxin',
+    'Arcane focus (' + rollTable(arcaneFocus) + ')',
     'Backpack',
     'Ball bearings(bag of 1, 000)',
     'Barrel	',
@@ -2078,73 +2078,73 @@ let gearArray = [
     'Blanket',
     'Block and tackle',
     'Book	',
-    'Bottle, glass',
+    'Glass bottle',
     'Bucket',
     'Caltrops(bag of 20)',
     'Candle',
-    'Case, crossbow bolt',
-    'Case, map or scroll',
-    'Chain(10 feet)	',
-    'Chalk(1 piece)',
+    'Crossbow bolts case',
+    'Map or scroll case',
+    '10 feet of chain',
+    '1 piece of chalk',
     'Chest	',
     "Climber's kit",
-    'Clothes, common',
-    'Clothes, costume',
-    'Clothes, fine	',
-    "Clothes, traveler's",
+    'Common clothes',
+    'Costume clothes',
+    'Fine clothes',
+    "Traveler's clothes",
     'Component pouch	',
     'Crowbar',
-    'Druidic focus' + druidicFocus,
+    'Druidic focus (' + rollTable(druidicFocus) + ')',
     'Fishing tackle',
     'Flask or tankard',
     'Grappling hook',
     'Hammer',
-    'Hammer, sledge	',
+    'Sledgehammer',
     "Healer's kit",
-    'Holy symbol' + holySymbol,
-    'Holy water(flask)	',
+    'Holy symbol (' + rollTable(holySymbol) + ')',
+    'Flask of Holy water',
     'Hourglass	',
     'Hunting trap	',
-    'Ink(1 ounce bott',
-    'Ink pen	2 cp',
+    '1 ounce bottle of ink',
+    'Ink pen',
     'Jug or pitcher',
-    'Ladder(10 - foot)	',
+    '10-foot ladder	',
     'Lamp',
-    'Lantern, bullseye	',
-    'Lantern, hooded',
+    'Bullseye lantern',
+    'Hooded Lantern',
     'Lock	',
     'Magnifying glass',
     'Manacles',
     'Mess kit',
     'Mirror, steel',
-    'Oil(flask)',
-    'Paper(one sheet)',
-    'Parchment(one sheet)',
-    'Perfume(vial)',
-    "Pick, miner's",
+    'Flask of oil',
+    'One sheet of paper',
+    'One sheet of parchment',
+    'Vial of perfume',
+    "Miner's pick",
     'Piton',
-    'Poison, basic(vial)',
-    'Pole(10 - foot)',
-    'Pot, iron',
+    'Vial of Poison',
+    '10-ft pole',
+    'Iron pot',
     'Potion of healing',
     'Pouch',
     'Quiver',
-    'Ram, portable',
-    'Rations(1 day)',
+    'Portable ram',
+    '1 day of rations',
     'Robes',
-    'Rope, hempen(50 feet)	',
-    'Rope, silk(50 feet)	',
+    '50 feet of hempen rope',
+    '50 feet of silk rope',
     'Sack',
-    "Scale, merchant's",
-    'Sealing',
+    "Merchant's scale",
+    'Sealing wax',
     'Shovel',
     'Signal whistle',
     'Signet',
     'Soap',
-    'Spellbook	',
-    'Spikes, iron(10)',
+    'Spellbook',
+    '10 iron spikes',
     'Spyglass',
-    'Tent, two - person	',
+    'Two-person tent',
     'Tinderbox',
     'Torch',
     'Vial',
@@ -2370,36 +2370,50 @@ function rolld(argument) {
     return totalRoll;
 }
 
-function extraOptions(){
-    if (trinketBox.checked){
+function rollTable(element){
+    length = element.length;
+    tableroll = Math.floor(Math.random()*length);
+    return element[tableroll];
+}
+
+function extraOptions() {
+    if (trinketBox.checked) {
         addTrinket();
     }
-    if (gearBox.checked){
+    if (gearBox.checked) {
         addGear();
     }
-    if (weaponBox.checked){
+    if (weaponBox.checked) {
         addWeapon();
     }
-    if (toolBox.checked){
+    if (toolBox.checked) {
         addToolkit();
     }
 }
 
-function addTrinket(){
+function addTrinket() {
     let rand = Math.floor(Math.random() * (trinketArray.length + 100));
-    if (rand >= 100){
-        treasureText.innerHTML += "<br>" + trinketArray[rand-100]
+    if (rand >= 100) {
+        treasureText.innerHTML += "<br><hr>" + trinketArray[rand - 100]
     }
 }
 
-function addGear(){
-
+function addGear() {
+    let length = gearArray.length;
+    let rand = Math.floor(Math.random() * (2 * length));
+    if (rand >= length) {
+        treasureText.innerHTML += "<br><hr>" + gearArray[rand - length]
+    }
 }
 
-function addWeapon(){
-
+function addWeapon() {
+    let length = weaponsarmorArray.length;
+    let rand = Math.floor(Math.random() * (2 * length));
+    if (rand >= length) {
+        treasureText.innerHTML += "<br><hr>" + weaponsarmorArray[rand - length]
+    }
 }
 
-function addToolkit(){
+function addToolkit() {
 
 }
