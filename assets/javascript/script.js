@@ -36,7 +36,7 @@ let parsedArray = [];
 //  -------------------------------------   FUNCTIONS   -------------------------------------  //
 
 
-fetch("https://raw.githubusercontent.com/SeppeVerhavert/Treasure-generator/master/libraries.json")
+fetch("https://raw.githubusercontent.com/SeppeVerhavert/Treasure-generator/master/library.json")
     .then(response => response.json())
     .then(json => library = json);
 
@@ -206,33 +206,33 @@ function extraOptions() {
 }
 
 function addTrinket() {
-    let rand = Math.random();
-    if (rand > 0.75) {
+    // let rand = Math.random();
+    // if (rand > 0.75) {
         let length = library.trinketArray.length;
         treasureText.innerHTML += "<br><hr>" + library.trinketArray[rolld(length)];
-    }
+    // }
 }
 
 function addGear() {
-    let rand = Math.random();
-    if (rand > 0.75) {
+    // let rand = Math.random();
+    // if (rand > 0.75) {
         let length = library.gearArray.length;
         treasureText.innerHTML += "<br><hr>" + library.gearArray[rolld(length)];
-    }
+    // }
 }
 
 function addWeapon() {
-    let rand = Math.random();
-    if (rand > 0.75) {
+    // let rand = Math.random();
+    // if (rand > 0.75) {
         let length = library.weaponsarmorArray.length;
         treasureText.innerHTML += "<br><hr>" + library.weaponsarmorArray[rolld(length)];
-    }
+    // }
 }
 
 function addToolkit() {
-    let rand = Math.random();
-    if (rand > 0.75) {
+    // let rand = Math.random();
+    // if (rand > 0.75) {
         let length = library.toolsArray.length;
         treasureText.innerHTML += "<br><hr>" + library.toolsArray[rolld(length)];
-    }
+    // }
 }
