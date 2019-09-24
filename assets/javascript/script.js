@@ -148,28 +148,14 @@ function rollForArrays() {
                 console.log(parsedArray[i]);
             } else if (parsedArray[i][3] === "art" || parsedArray[i][3] === "gems") {
                 let table = parsedArray[i][3] + parsedArray[i][1] + parsedArray[i][2];
-                console.log(rollTable(searchJson(table)));
+                let totalObjects = [];
+                console.log(rollTotal);
+                for (let k = 0; k < rollTotal; k++){
+                    console.log(rollTable(searchJson(table)));
+                }
             }
         }
     }
-    // let roll = value[0].split('d');
-    // treasureText.innerHTML = rolld(roll[0]) + " " + value[1];
-    // } else if (value.length <= 4) {
-    //     let roll = value[0].split('d');
-    //     treasureText.innerHTML = rolld(roll[0]) * value[2] + " " + value[3];
-    // } else if (value.length <= 7) {
-    //     let roll1 = value[0].split('d');
-    //     let roll2 = value[5].split('d');
-    //     treasureText.innerHTML = rolld(roll1[0]) * value[2] + " " + value[3] + "<br>" + rolld(roll2[0]) + " " + value[6];
-    // } else if (value.length <= 9) {
-    //     let roll1 = value[0].split('d');
-    //     let roll2 = value[5].split('d');
-    //     treasureText.innerHTML = rolld(roll1[0]) * value[2] + " " + value[3] + "<br>" + rolld(roll2[0]) * value[7] + " " + value[8];
-    // } else if (value.length <= 9) {
-    //     let roll1 = value[0].split('d');
-    //     let roll2 = value[5].split('d');
-    //     treasureText.innerHTML = rolld(roll1[0]) * value[2] + " " + value[3] + "<br>" + rolld(roll2[0]) * value[7] + " " + value[8];
-    // }
 }
 
 function searchJson(element) {
@@ -206,34 +192,33 @@ function extraOptions() {
 }
 
 function addTrinket() {
-    // let rand = Math.random();
-    // if (rand > 0.75) {
-        let length = library.trinketArray.length;
-        treasureText.innerHTML += "<br><hr>" + library.trinketArray[rolld(length)];
-    // }
-}
-
-function addToolkit() {
-    // let rand = Math.random();
-    // if (rand > 0.75) {
-        let length = library.toolsArray.length;
-        treasureText.innerHTML += "<br><hr>" + library.toolsArray[rolld(length)];
-    // }
+    let rand = Math.random();
+    if (rand > 0.75) {
+    let length = library.trinketArray.length - 1;
+    treasureText.innerHTML += "<br><hr>" + library.trinketArray[rolld(length)];
+    }
 }
 
 function addGear() {
-    // let rand = Math.random();
-    // if (rand > 0.75) {
-        let length = library.gearArray.length;
-        treasureText.innerHTML += "<br><hr>" + library.gearArray[rolld(length)];
-    // }
+    let rand = Math.random();
+    if (rand > 0.75) {
+    let length = library.gearArray.length - 1;
+    treasureText.innerHTML += "<br><hr>" + library.gearArray[rolld(length)];
+    }
 }
 
 function addWeapon() {
-    // let rand = Math.random();
-    // if (rand > 0.75) {
-        let length = library.weaponsarmorArray.length;
-        treasureText.innerHTML += "<br><hr>" + library.weaponsarmorArray[rolld(length)];
-    // }
+    let rand = Math.random();
+    if (rand > 0.75) {
+    let length = library.weaponsarmorArray.length - 1;
+    treasureText.innerHTML += "<br><hr>" + library.weaponsarmorArray[rolld(length)];
+    }
 }
 
+function addToolkit() {
+    let rand = Math.random();
+    if (rand > 0.75) {
+    let length = library.toolsArray.length - 1;
+    treasureText.innerHTML += "<br><hr>" + library.toolsArray[rolld(length)];
+    }
+}
