@@ -213,6 +213,14 @@ function addTrinket() {
     // }
 }
 
+function addToolkit() {
+    // let rand = Math.random();
+    // if (rand > 0.75) {
+        let length = library.toolsArray.length;
+        treasureText.innerHTML += "<br><hr>" + library.toolsArray[rolld(length)];
+    // }
+}
+
 function addGear() {
     // let rand = Math.random();
     // if (rand > 0.75) {
@@ -229,10 +237,3 @@ function addWeapon() {
     // }
 }
 
-function addToolkit() {
-    // let rand = Math.random();
-    // if (rand > 0.75) {
-        let length = library.toolsArray.length;
-        treasureText.innerHTML += "<br><hr>" + library.toolsArray[rolld(length)];
-    // }
-}
