@@ -2136,5 +2136,6 @@
     "Chain mail armor",
     "Splint armor",
     "Plate armor"
-    ]
+    ],
+    "this is a change": true
 }
