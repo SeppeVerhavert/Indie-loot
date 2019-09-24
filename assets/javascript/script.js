@@ -36,7 +36,7 @@ let parsedArray = [];
 //  -------------------------------------   FUNCTIONS   -------------------------------------  //
 
 
-fetch("https://raw.githubusercontent.com/SeppeVerhavert/Treasure-generator/master/assets/json/libraries.json")
+fetch("https://raw.githubusercontent.com/SeppeVerhavert/Treasure-generator/master/libraries.json")
     .then(response => response.json())
     .then(json => library = json);
 
