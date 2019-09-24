@@ -75,19 +75,19 @@ function checkType() {
 function rollIndividual() {
     if (crText.innerHTML === "Challenge Rating 0 - 4") {
         let rand = Math.floor(Math.random() * 100);
-        return IndivCR04Array[rand];
+        return library.IndivCR04Array[rand];
     }
     else if (crText.innerHTML === "Challenge Rating 5 - 10") {
         let rand = Math.floor(Math.random() * 100);
-        return IndivCR510Array[rand];
+        return library.IndivCR510Array[rand];
     }
     else if (crText.innerHTML === "Challenge Rating 11 - 16") {
         let rand = Math.floor(Math.random() * 100);
-        return IndivCR1116Array[rand];
+        return library.IndivCR1116Array[rand];
     }
     else if (crText.innerHTML === "Challenge Rating 17+") {
         let rand = Math.floor(Math.random() * 100);
-        return IndivCR17Array[rand];
+        return library.IndivCR17Array[rand];
     }
 }
 
@@ -132,7 +132,6 @@ function parseValue() {
 
 function rollForArrays() {
     for (let i = 0; i < parsedArray.length; i++) {
-        console.log(parsedArray[i]);
 
         if (parsedArray[i][0].match(/\d+d{1}\d/)) {
             let diceroll = parsedArray[i][0].split('');
@@ -173,9 +172,9 @@ function rollForArrays() {
     // }
 }
 
-function searchJson(element){
-        for(let k=0;k<Object.keys(library).length;k++){
-        if (Object.keys(library)[k] === element){
+function searchJson(element) {
+    for (let k = 0; k < Object.keys(library).length; k++) {
+        if (Object.keys(library)[k] === element) {
             return library[element];
         }
     }
@@ -207,33 +206,33 @@ function extraOptions() {
 }
 
 function addTrinket() {
-    let length = trinketArray.length;
-    let rand = Math.floor(Math.random() * (4 * length));
-    if (rand >= length * 3) {
-        treasureText.innerHTML += "<br><hr>" + trinketArray[rand - length * 3]
+    let rand = Math.random();
+    if (rand > 0.75) {
+        let length = library.trinketArray.length;
+        treasureText.innerHTML += "<br><hr>" + library.trinketArray[rolld(length)];
     }
 }
 
 function addGear() {
-    let length = gearArray.length;
-    let rand = Math.floor(Math.random() * (4 * length));
-    if (rand >= length * 3) {
-        treasureText.innerHTML += "<br><hr>" + gearArray[rand - (length * 3)]
+    let rand = Math.random();
+    if (rand > 0.75) {
+        let length = library.gearArray.length;
+        treasureText.innerHTML += "<br><hr>" + library.gearArray[rolld(length)];
     }
 }
 
 function addWeapon() {
-    let length = weaponsarmorArray.length;
-    let rand = Math.floor(Math.random() * (4 * length));
-    if (rand >= length * 3) {
-        treasureText.innerHTML += "<br><hr>" + weaponsarmorArray[rand - (length * 3)]
+    let rand = Math.random();
+    if (rand > 0.75) {
+        let length = library.weaponsarmorArray.length;
+        treasureText.innerHTML += "<br><hr>" + library.weaponsarmorArray[rolld(length)];
     }
 }
 
 function addToolkit() {
-    let length = toolsArray.length;
-    let rand = Math.floor(Math.random() * (4 * length));
-    if (rand >= length * 3) {
-        treasureText.innerHTML += "<br><hr>" + toolsArray[rand - (length * 3)]
+    let rand = Math.random();
+    if (rand > 0.75) {
+        let length = library.toolsArray.length;
+        treasureText.innerHTML += "<br><hr>" + library.toolsArray[rolld(length)];
     }
 }
