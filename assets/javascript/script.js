@@ -139,12 +139,10 @@ function rollForArrays() {
             let size = diceroll[1];
             let rollTotal = 0;
 
-            if (diceroll.length === 4){
+            if (diceroll.length === 4) {
                 let elements = diceroll[0] + diceroll[1];
                 times = parseInt(elements);
             }
-
-            console.log(diceroll);
 
             for (let j = 0; j < times; j++) {
                 rollTotal += rolld(size);
@@ -152,7 +150,8 @@ function rollForArrays() {
 
             if (parsedArray[i][1] === "x") {
                 parsedArray[i] = rollTotal * parsedArray[i][2] + parsedArray[i][3];
-            } else if (parsedArray[i][3] === "art" || parsedArray[i][3] === "gems") {
+            }
+            else if (parsedArray[i][3] === "art" || parsedArray[i][3] === "gems") {
                 let table = parsedArray[i][3] + parsedArray[i][1] + parsedArray[i][2];
                 let newGemArray = [];
                 for (let k = 0; k < rollTotal; k++) {
@@ -164,12 +163,17 @@ function rollForArrays() {
         }
 
         if (parsedArray[i][0] === "Roll") {
+            let table = "magicTable" + parsedArray[i][7];
+            console.log(table);
             let diceroll = parsedArray[i][1].split('');
             let times = diceroll[0];
             let size = diceroll[2];
             let rollTotal = 0;
             for (let j = 0; j < times; j++) {
                 rollTotal += rolld(size);
+            }
+            for (let l = 0; l < rollTotal; l++) {
+
             }
         }
     }
