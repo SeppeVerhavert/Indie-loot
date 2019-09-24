@@ -825,8 +825,8 @@
         "Moss agate (translucent pink or yellow-white with mossy gray or green markings)",
         "Obsidian (opaque black)",
         "Rhodochrosite (opaque light pink)",
-        "Tiger eye (translucent brown with golden center)",
-        "Turquoise (opaque light blue-green"
+        "Tiger-eye turquoise (translucent brown with golden center)",
+        "Freshwater pearl (irregular opaque light blue-green)"
     ],
     "gems50gp": [
         "Bloodstone (opaque dark gray with red flecks)",
@@ -840,7 +840,19 @@
         "Quartz (transparent white, smoky gray, or yellow)",
         "Sardonyx (opaque bands of red and white)",
         "Star rose quartz (translucent rosy stone with white star-shaped center)",
-        "Zircon (transparent pale blue-green"
+        "Zircon (transparent pale blue-green)"
+    ],
+    "gems100gp": [
+        "Amber (transparent watery gold to rich gold)",
+        "Amethyst (transparent deep purple)",
+        "Chrysoberyl (transparent yellow-green to pale green)",
+        "Coral (opaque crimson)",
+        "Garnet (transparent red, brown-green, or violet)",
+        "jade (translucent light green, deep green , or white)",
+        "jet (opaque deep black)",
+        "Pearl (opaque lustrous white , yellow, or pink)",
+        "Spinel (transparent red, red-brown, or deep green)",
+        "Tourmaline (transparent pale green , blue, brown , or red)" 
     ],
     "gems500gp": [
         "Alexandrite (transparent dark green)",
@@ -858,7 +870,7 @@
         "Opal (translucent pale blue with green and golden mottling)",
         "Star ruby (translucent ruby with white star-shaped center)",
         "Star sapphire (translucent blue sapphire with white star-shaped center)",
-        "Yellow sapphire (transparent fiery yellow or yellow green"
+        "Yellow sapphire (transparent fiery yellow or yellow green)"
     ],
     "gems5000gp": [
         "Black sapphire (translucent lustrous black with glowing highlights)",

@@ -132,6 +132,7 @@ function parseValue() {
 
 function rollForArrays() {
     for (let i = 0; i < parsedArray.length; i++) {
+        console.log(parsedArray);
 
         if (parsedArray[i][0].match(/\d+d{1}\d/)) {
             let diceroll = parsedArray[i][0].split('');
@@ -148,7 +149,7 @@ function rollForArrays() {
                 console.log(parsedArray[i]);
             } else if (parsedArray[i][3] === "art" || parsedArray[i][3] === "gems") {
                 let table = parsedArray[i][3] + parsedArray[i][1] + parsedArray[i][2];
-                let totalObjects = [];
+                console.log(table);
                 console.log(rollTotal);
                 for (let k = 0; k < rollTotal; k++){
                     console.log(rollTable(searchJson(table)));
