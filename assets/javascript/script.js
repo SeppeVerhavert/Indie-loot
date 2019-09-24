@@ -132,13 +132,19 @@ function parseValue() {
 
 function rollForArrays() {
     for (let i = 0; i < parsedArray.length; i++) {
-        console.log(parsedArray);
 
         if (parsedArray[i][0].match(/\d+d{1}\d/)) {
-            let diceroll = parsedArray[i][0].split('');
+            let diceroll = parsedArray[i][0].split('d');
             let times = diceroll[0];
-            let size = diceroll[2];
+            let size = diceroll[1];
             let rollTotal = 0;
+
+            if (diceroll.length === 4){
+                let elements = diceroll[0] + diceroll[1];
+                times = parseInt(elements);
+            }
+
+            console.log(diceroll);
 
             for (let j = 0; j < times; j++) {
                 rollTotal += rolld(size);
@@ -146,17 +152,28 @@ function rollForArrays() {
 
             if (parsedArray[i][1] === "x") {
                 parsedArray[i] = rollTotal * parsedArray[i][2] + parsedArray[i][3];
-                console.log(parsedArray[i]);
             } else if (parsedArray[i][3] === "art" || parsedArray[i][3] === "gems") {
                 let table = parsedArray[i][3] + parsedArray[i][1] + parsedArray[i][2];
-                console.log(table);
-                console.log(rollTotal);
-                for (let k = 0; k < rollTotal; k++){
-                    console.log(rollTable(searchJson(table)));
+                let newGemArray = [];
+                for (let k = 0; k < rollTotal; k++) {
+                    newGem = rollTable(searchJson(table));
+                    newGemArray.push(newGem);
                 }
+                parsedArray[i] = newGemArray;
+            }
+        }
+
+        if (parsedArray[i][0] === "Roll") {
+            let diceroll = parsedArray[i][1].split('');
+            let times = diceroll[0];
+            let size = diceroll[2];
+            let rollTotal = 0;
+            for (let j = 0; j < times; j++) {
+                rollTotal += rolld(size);
             }
         }
     }
+    console.log(parsedArray);
 }
 
 function searchJson(element) {
@@ -195,31 +212,31 @@ function extraOptions() {
 function addTrinket() {
     let rand = Math.random();
     if (rand > 0.75) {
-    let length = library.trinketArray.length - 1;
-    treasureText.innerHTML += "<br><hr>" + library.trinketArray[rolld(length)];
+        let length = library.trinketArray.length - 1;
+        treasureText.innerHTML += "<br><hr>" + library.trinketArray[rolld(length)];
     }
 }
 
 function addGear() {
     let rand = Math.random();
     if (rand > 0.75) {
-    let length = library.gearArray.length - 1;
-    treasureText.innerHTML += "<br><hr>" + library.gearArray[rolld(length)];
+        let length = library.gearArray.length - 1;
+        treasureText.innerHTML += "<br><hr>" + library.gearArray[rolld(length)];
     }
 }
 
 function addWeapon() {
     let rand = Math.random();
     if (rand > 0.75) {
-    let length = library.weaponsarmorArray.length - 1;
-    treasureText.innerHTML += "<br><hr>" + library.weaponsarmorArray[rolld(length)];
+        let length = library.weaponsarmorArray.length - 1;
+        treasureText.innerHTML += "<br><hr>" + library.weaponsarmorArray[rolld(length)];
     }
 }
 
 function addToolkit() {
     let rand = Math.random();
     if (rand > 0.75) {
-    let length = library.toolsArray.length - 1;
-    treasureText.innerHTML += "<br><hr>" + library.toolsArray[rolld(length)];
+        let length = library.toolsArray.length - 1;
+        treasureText.innerHTML += "<br><hr>" + library.toolsArray[rolld(length)];
     }
 }
