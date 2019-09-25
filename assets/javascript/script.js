@@ -53,7 +53,6 @@ function generateTreasure() {
     rollForArrays();
     applyParsedArray();
     extraOptions();
-    console.log(library.TrhoardCR04Array[99]);
 }
 
 function toggleOptions() {
@@ -159,6 +158,7 @@ function rollForArrays() {
                 parsedArray[i] = rollTotal * parsedArray[i][2] + parsedArray[i][3];
             }
             else if (parsedArray[i][3] === "art" || parsedArray[i][3] === "gems") {
+                console.log(parsedArray[i]);
                 let table = parsedArray[i][3] + parsedArray[i][1] + parsedArray[i][2];
                 newGem = rollTable(searchJson(table));
                 parsedArray[i] = rollTotal + " x " + newGem;
