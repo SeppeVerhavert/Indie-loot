@@ -53,7 +53,7 @@ function generateTreasure() {
     rollForArrays();
     applyParsedArray();
     extraOptions();
-    console.log(library);
+    console.log(library.TrhoardCR04Array[99]);
 }
 
 function toggleOptions() {
