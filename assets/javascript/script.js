@@ -51,6 +51,7 @@ function generateTreasure() {
     checkType();
     parseValue();
     rollForArrays();
+    applyParsedArray();
     extraOptions();
 }
 
@@ -165,10 +166,10 @@ function rollForArrays() {
         if (parsedArray[i][0] === "Roll") {
             let table = "magicTable" + parsedArray[i][7];
             let diceroll = parsedArray[i][1].split('');
+            parsedArray.splice(i, 1);
             let times = diceroll[0];
             let size = diceroll[2];
             let rollTotal = 0;
-            let newItemArray = [];
 
             for (let j = 0; j < times; j++) {
                 rollTotal += rolld(size);
@@ -176,12 +177,23 @@ function rollForArrays() {
 
             for (let l = 0; l < rollTotal; l++) {
                 newItem = rollTable(searchJson(table));
-                newItemArray.push(newItem);
+                let m = i - 1;
+                parsedArray.push(newItem);
             }
-            parsedArray[i] = newItemArray;
         }
     }
     console.log(parsedArray);
+}
+
+function applyParsedArray() {
+    treasureText.innerHTML = "";
+    for (n = 0; n < parsedArray.length; n++) {
+        if (n === 0){
+            treasureText.innerHTML += parsedArray[n];
+        } else {
+            treasureText.innerHTML += "<br><hr>" + parsedArray[n];
+        }
+    }
 }
 
 function searchJson(element) {
