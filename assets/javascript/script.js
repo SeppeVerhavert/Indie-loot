@@ -53,6 +53,7 @@ function generateTreasure() {
     rollForArrays();
     applyParsedArray();
     extraOptions();
+    console.log(library);
 }
 
 function toggleOptions() {
@@ -129,11 +130,12 @@ function parseValue() {
         }
     }
     parsedArray = bigArray;
+    console.log(parsedArray);
 }
 
 function rollForArrays() {
     for (let i = 0; i < parsedArray.length; i++) {
-
+        
         if (parsedArray[i][0].match(/\d+d{1}\d/)) {
             let diceroll = parsedArray[i][0].split('d');
             let times = diceroll[0];
@@ -177,12 +179,10 @@ function rollForArrays() {
 
             for (let l = 0; l < rollTotal; l++) {
                 newItem = rollTable(searchJson(table));
-                let m = i - 1;
                 parsedArray.push(newItem);
             }
         }
     }
-    console.log(parsedArray);
 }
 
 function applyParsedArray() {
