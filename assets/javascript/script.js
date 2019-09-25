@@ -179,12 +179,6 @@ function rollForArrays() {
                 newItem = rollTable(searchJson(table));
                 parsedArray.push(newItem);
             }
-
-            // for (let p = 0; p < parsedArray.length; p++){
-            //     if (parsedArray[p][0] === "Roll"){
-            //         parsedArray.splice(p, 1);
-            //     }
-            // }
         }
     }
 }
@@ -192,6 +186,7 @@ function rollForArrays() {
 function applyParsedArray() {
     console.log(parsedArray);
     treasureText.innerHTML = "";
+
     for (n = 0; n < parsedArray.length; n++) {
         if (n === 0) {
             treasureText.innerHTML += parsedArray[n];
