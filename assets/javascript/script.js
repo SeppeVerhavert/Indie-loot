@@ -129,12 +129,12 @@ function parseValue() {
         }
     }
     parsedArray = bigArray;
-    console.log(parsedArray);
 }
 
 function rollForArrays() {
     for (let i = 0; i < parsedArray.length; i++) {
-        
+        console.log(parsedArray[i]);
+
         if (parsedArray[i][0].match(/\d+d{1}\d/)) {
             let diceroll = parsedArray[i][0].split('d');
             let times = diceroll[0];
@@ -158,7 +158,6 @@ function rollForArrays() {
                 parsedArray[i] = rollTotal * parsedArray[i][2] + parsedArray[i][3];
             }
             else if (parsedArray[i][3] === "art" || parsedArray[i][3] === "gems") {
-                console.log(parsedArray[i]);
                 let table = parsedArray[i][3] + parsedArray[i][1] + parsedArray[i][2];
                 newGem = rollTable(searchJson(table));
                 parsedArray[i] = rollTotal + " x " + newGem;
@@ -168,7 +167,6 @@ function rollForArrays() {
         if (parsedArray[i][0] === "Roll") {
             let table = "magicTable" + parsedArray[i][7];
             let diceroll = parsedArray[i][1].split('');
-            parsedArray.splice(i, 1);
             let times = diceroll[0];
             let size = diceroll[2];
             let rollTotal = 0;
@@ -181,14 +179,21 @@ function rollForArrays() {
                 newItem = rollTable(searchJson(table));
                 parsedArray.push(newItem);
             }
+
+            for (let p = 0; p < parsedArray.length; p++){
+                if (parsedArray[p][0] === "Roll"){
+                    parsedArray.splice(p, 1);
+                }
+            }
         }
     }
 }
 
 function applyParsedArray() {
+    console.log(parsedArray);
     treasureText.innerHTML = "";
     for (n = 0; n < parsedArray.length; n++) {
-        if (n === 0){
+        if (n === 0) {
             treasureText.innerHTML += parsedArray[n];
         } else {
             treasureText.innerHTML += "<br><hr>" + parsedArray[n];
