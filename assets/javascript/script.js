@@ -180,11 +180,11 @@ function rollForArrays() {
                 parsedArray.push(newItem);
             }
 
-            for (let p = 0; p < parsedArray.length; p++){
-                if (parsedArray[p][0] === "Roll"){
-                    parsedArray.splice(p, 1);
-                }
-            }
+            // for (let p = 0; p < parsedArray.length; p++){
+            //     if (parsedArray[p][0] === "Roll"){
+            //         parsedArray.splice(p, 1);
+            //     }
+            // }
         }
     }
 }
