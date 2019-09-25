@@ -185,7 +185,21 @@ function rollForArrays() {
 
 function applyParsedArray() {
     console.log(parsedArray);
+
     treasureText.innerHTML = "";
+    let length = parsedArray.length;
+    let removeIndex = [];
+
+    for (let p = 0; p < length; p++) {
+        if (parsedArray[p][0] === "Roll") {
+            removeIndex.push(p);
+        }
+    }
+
+    console.log(removeIndex);
+    for(let q=0; q<removeIndex.length;q++){
+        parsedArray.splice(removeIndex[q], removeIndex[q+1]);
+    }
 
     for (n = 0; n < parsedArray.length; n++) {
         if (n === 0) {
