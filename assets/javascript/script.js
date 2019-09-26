@@ -187,7 +187,6 @@ function rollForArrays() {
 }
 
 function applyParsedArray() {
-    console.log(parsedArray);
     treasureText.innerHTML = "";
 
     if (parsedArray.length >= 3) {
