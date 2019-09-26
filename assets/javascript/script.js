@@ -234,57 +234,22 @@ function rollTable(element) {
 
 function extraOptions() {
     if (trinketBox.checked) {
-        addTrinket();
-    }
-    if (gearBox.checked) {
-        addGear();
-    }
-    if (weaponBox.checked) {
-        addWeapon();
-    }
-    if (toolBox.checked) {
-        addToolkit();
-    }
-    if (componentBox.checked) {
-        addComponent();
-    }
-}
-
-function addTrinket() {
-    let rand = Math.random();
-    if (rand > 0.75) {
         let length = library.trinketArray.length - 1;
         treasureText.innerHTML += "<br><hr>" + library.trinketArray[rolld(length)];
     }
-}
-
-function addGear() {
-    let rand = Math.random();
-    if (rand > 0.75) {
+    if (gearBox.checked) {
         let length = library.gearArray.length - 1;
         treasureText.innerHTML += "<br><hr>" + library.gearArray[rolld(length)];
     }
-}
-
-function addWeapon() {
-    let rand = Math.random();
-    if (rand > 0.75) {
+    if (weaponBox.checked) {
         let length = library.weaponsarmorArray.length - 1;
         treasureText.innerHTML += "<br><hr>" + library.weaponsarmorArray[rolld(length)];
     }
-}
-
-function addToolkit() {
-    let rand = Math.random();
-    if (rand > 0.75) {
+    if (toolBox.checked) {
         let length = library.toolsArray.length - 1;
         treasureText.innerHTML += "<br><hr>" + library.toolsArray[rolld(length)];
     }
-}
-
-function addComponent() {
-    let rand = Math.random();
-    if (rand > 0.75) {
+    if (componentBox.checked) {
         let length = library.componentArray.length - 1;
         treasureText.innerHTML += "<br><hr>" + library.componentArray[rolld(length)];
     }
