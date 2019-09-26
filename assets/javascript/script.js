@@ -189,19 +189,23 @@ function applyParsedArray() {
     console.log(parsedArray);
     treasureText.innerHTML = "";
 
-    if(parsedArray.length>=4){
-        if (parsedArray[3][0] === "Roll") {
-            parsedArray.splice(3, 1);
+    if (parsedArray.length >= 4) {
+        for (let i = 0; i < parsedArray.length; i++) {
+            if (parsedArray[i][0] === "Roll") {
+                parsedArray.splice(i, 1);
+            }
         }
-    
-        if (parsedArray[3][0] === "Roll") {
-            parsedArray.splice(3, 1);
+
+        for (let i = 0; i < parsedArray.length; i++) {
+            if (parsedArray[i][0] === "Roll") {
+                parsedArray.splice(i, 1);
+            }
         }
     }
-    
+
     for (n = 0; n < parsedArray.length; n++) {
         if (n === 0) {
-            treasureText.innerHTML += parsedArray[n];
+            treasureText.innerHTML += parsedArray[0];
         } else {
             treasureText.innerHTML += "<br><hr>" + parsedArray[n];
         }
