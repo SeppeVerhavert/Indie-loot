@@ -158,7 +158,7 @@ function rollForArrays() {
             }
 
             if (parsedArray[i][1] === "x") {
-                parsedArray[i] = rollTotal * parsedArray[i][2] + parsedArray[i][3];
+                parsedArray[i] = rollTotal * parsedArray[i][2] + " " + parsedArray[i][3];
             }
             else if (parsedArray[i][3] === "art" || parsedArray[i][3] === "gems") {
                 let table = parsedArray[i][3] + parsedArray[i][1] + parsedArray[i][2];
