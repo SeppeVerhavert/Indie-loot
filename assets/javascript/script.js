@@ -189,7 +189,7 @@ function applyParsedArray() {
     console.log(parsedArray);
     treasureText.innerHTML = "";
 
-    if (parsedArray.length >= 4) {
+    if (parsedArray.length >= 3) {
         for (let i = 0; i < parsedArray.length; i++) {
             if (parsedArray[i][0] === "Roll") {
                 parsedArray.splice(i, 1);
