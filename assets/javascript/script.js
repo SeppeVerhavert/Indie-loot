@@ -29,6 +29,7 @@ let trinketBox = document.getElementById('trinkets');
 let gearBox = document.getElementById('gear');
 let weaponBox = document.getElementById('weapons');
 let toolBox = document.getElementById('tools');
+let componentBox = document.getElementById('components');
 
 let parsedArray = [];
 
@@ -44,6 +45,7 @@ function showCr() {
     let range = document.getElementById("crRange").value;
     crText.innerHTML = "Challenge Rating " + crArray[range];
 }
+
 
 function generateTreasure() {
     toggle = true;
@@ -129,12 +131,12 @@ function parseValue() {
         }
     }
     parsedArray = bigArray;
+    bigArray = [];
+    smallArray = [];
 }
 
 function rollForArrays() {
     for (let i = 0; i < parsedArray.length; i++) {
-        console.log(parsedArray[i]);
-
         if (parsedArray[i][0].match(/\d+d{1}\d/)) {
             let diceroll = parsedArray[i][0].split('d');
             let times = diceroll[0];
@@ -185,22 +187,18 @@ function rollForArrays() {
 
 function applyParsedArray() {
     console.log(parsedArray);
-
     treasureText.innerHTML = "";
-    let length = parsedArray.length;
-    let removeIndex = [];
 
-    for (let p = 0; p < length; p++) {
-        if (parsedArray[p][0] === "Roll") {
-            removeIndex.push(p);
+    if(parsedArray.length>=4){
+        if (parsedArray[3][0] === "Roll") {
+            parsedArray.splice(3, 1);
+        }
+    
+        if (parsedArray[3][0] === "Roll") {
+            parsedArray.splice(3, 1);
         }
     }
-
-    console.log(removeIndex);
-    for(let q=0; q<removeIndex.length;q++){
-        parsedArray.splice(removeIndex[q], removeIndex[q+1]);
-    }
-
+    
     for (n = 0; n < parsedArray.length; n++) {
         if (n === 0) {
             treasureText.innerHTML += parsedArray[n];
@@ -241,6 +239,9 @@ function extraOptions() {
     if (toolBox.checked) {
         addToolkit();
     }
+    if (componentBox.checked) {
+        addComponent();
+    }
 }
 
 function addTrinket() {
@@ -272,5 +273,13 @@ function addToolkit() {
     if (rand > 0.75) {
         let length = library.toolsArray.length - 1;
         treasureText.innerHTML += "<br><hr>" + library.toolsArray[rolld(length)];
+    }
+}
+
+function addComponent() {
+    let rand = Math.random();
+    if (rand > 0.75) {
+        let length = library.componentArray.length - 1;
+        treasureText.innerHTML += "<br><hr>" + library.componentArray[rolld(length)];
     }
 }
