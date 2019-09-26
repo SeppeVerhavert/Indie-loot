@@ -47,14 +47,14 @@ function showCr() {
     crText.innerHTML = "Challenge Rating " + crArray[range];
 }
 
-
 function generateTreasure() {
     toggle = true;
     toggleOptions();
     checkType();
     parseValue();
     rollForArrays();
-    applyParsedArray();
+    removeTable();
+    addText();
     extraOptions();
 }
 
@@ -120,15 +120,15 @@ function parseValue() {
     let bigArray = [];
     let smallArray = [];
 
-    for (let x = 0; x <= value.length; x++) {
-        if (value[x] === "+") {
+    for (let i = 0; i <= value.length; i++) {
+        if (value[i] === "+") {
             bigArray.push(smallArray);
             smallArray = [];
-        } else if (x === value.length) {
+        } else if (i === value.length) {
             bigArray.push(smallArray);
             smallArray = [];
         } else {
-            smallArray.push(value[x]);
+            smallArray.push(value[i]);
         }
     }
     parsedArray = bigArray;
@@ -154,7 +154,7 @@ function rollForArrays() {
             }
 
             if (parsedArray[i][1] === "cp" || parsedArray[i][1] === "sp" || parsedArray[i][1] === "ep" || parsedArray[i][1] === "gp" || parsedArray[i][1] === "pp") {
-                parsedArray[i] = rollTotal + parsedArray[i][1];
+                parsedArray[i] = rollTotal + " " + parsedArray[i][1];
             }
 
             if (parsedArray[i][1] === "x") {
@@ -178,7 +178,7 @@ function rollForArrays() {
                 rollTotal += rolld(size);
             }
 
-            for (let l = 0; l < rollTotal; l++) {
+            for (let j = 0; j < rollTotal; j++) {
                 newItem = rollTable(searchJson(table));
                 parsedArray.push(newItem);
             }
@@ -186,7 +186,7 @@ function rollForArrays() {
     }
 }
 
-function applyParsedArray() {
+function removeTable() {
     treasureText.innerHTML = "";
 
     if (parsedArray.length >= 3) {
@@ -202,7 +202,9 @@ function applyParsedArray() {
             }
         }
     }
+}
 
+function addText() {
     for (n = 0; n < parsedArray.length; n++) {
         if (n === 0) {
             treasureText.innerHTML += parsedArray[0];
@@ -213,8 +215,8 @@ function applyParsedArray() {
 }
 
 function searchJson(element) {
-    for (let k = 0; k < Object.keys(library).length; k++) {
-        if (Object.keys(library)[k] === element) {
+    for (let i = 0; i < Object.keys(library).length; i++) {
+        if (Object.keys(library)[i] === element) {
             return library[element];
         }
     }
