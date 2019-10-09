@@ -3,6 +3,8 @@
 # Treasure-generator
 A full-on treasure generator for D&D 5e
 
+[CLICK ME TO GENERATE YOUR TREASURE!](https://seppeverhavert.github.io/Treasure-generator/)
+
 ![Treasure Generator for PC](https://raw.githubusercontent.com/SeppeVerhavert/Treasure-generator/master/assets/img/treasuregenerator1.png "Treasure Generator for PC")
 
 ## What is this?
