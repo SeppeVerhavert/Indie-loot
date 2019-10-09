@@ -49,6 +49,7 @@ function showCr() {
 }
 
 function generateTreasure() {
+    treasureText.style.display="block";
     toggle = true;
     toggleOptions();
     checkType();
