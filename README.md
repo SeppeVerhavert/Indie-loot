@@ -1,7 +1,7 @@
 ![LICENSE MIT](https://img.shields.io/badge/LICENSE-MIT-brightgreen)
 
 # Treasure-generator
-A full-on treasure generator for D&D 5e
+A full-on treasure generator for D&D 5e both for PC and Mobile.
 
 [CLICK ME TO GENERATE YOUR TREASURE!](https://seppeverhavert.github.io/Treasure-generator/)
 
