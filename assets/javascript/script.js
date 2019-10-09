@@ -255,7 +255,8 @@ function extraOptions() {
         treasureText.innerHTML += "<br><hr>" + library.componentArray[rolld(length)];
     }
     if (bookBox.checked) {
-        let length = library.componentArray.length - 1;
+        console.log(library.bookArray);
+        let length = library.bookArray.length - 1;
         treasureText.innerHTML += "<br><hr>" + library.bookArray[rolld(length)];
     }
 }
