@@ -31,6 +31,7 @@ let gearBox = document.getElementById('gear');
 let weaponBox = document.getElementById('weapons');
 let toolBox = document.getElementById('tools');
 let componentBox = document.getElementById('components');
+let bookBox = document.getElementById('books');
 
 let parsedArray = [];
 
@@ -252,5 +253,9 @@ function extraOptions() {
     if (componentBox.checked) {
         let length = library.componentArray.length - 1;
         treasureText.innerHTML += "<br><hr>" + library.componentArray[rolld(length)];
+    }
+    if (bookBox.checked) {
+        let length = library.componentArray.length - 1;
+        treasureText.innerHTML += "<br><hr>" + library.bookArray[rolld(length)];
     }
 }
