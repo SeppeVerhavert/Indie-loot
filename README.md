@@ -3,7 +3,7 @@
 # Indie Loot - 5e D&D Treasure Generator
 A full-on treasure generator for D&D 5e supporting PC and Mobile.
 
-[CLICK ME TO GENERATE YOUR LOOT!](https://seppeverhavert.github.io/Treasure-generator/)
+[CLICK ME TO GENERATE YOUR LOOT!](https://seppeverhavert.github.io/Indie-loot/)
 
 ![Indie Loot for PC](https://raw.githubusercontent.com/SeppeVerhavert/Treasure-generator/master/assets/img/treasuregenerator1.png "Indie Loot for PC")
 
