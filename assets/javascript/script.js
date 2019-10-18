@@ -80,6 +80,7 @@ function substractNumber() {
         number.innerHTML = newnumber;
         changedOptions = true;
         reset = true;
+        resetBtn.innerHTML = "Reset";
     } else {
         return;
     }
@@ -92,6 +93,7 @@ function addNumber() {
         number.innerHTML = newnumber;
         changedOptions = true;
         reset = true;
+        resetBtn.innerHTML = "Reset";
     } else {
         return;
     }
