@@ -48,6 +48,14 @@ function showCr() {
     crText.innerHTML = "Challenge Rating " + crArray[range];
 }
 
+function test() {
+    for(let i=0; i<=9;i++){
+        generateTreasure();
+        console.log(treasureText.innerHTML);
+    }
+    console.log("finish test");
+}
+
 function generateTreasure() {
     treasureText.style.display="block";
     toggle = true;
