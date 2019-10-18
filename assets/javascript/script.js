@@ -15,8 +15,8 @@ let crSlider = document.getElementById('crRange');
 let crText = document.getElementById('crText');
 crSlider.addEventListener('input', showCr);
 
-let resetBtn = document.getElementById('resetBtn')
-resetBtn.addEventListener('click', resetOptions);
+document.getElementById('randomBtn').addEventListener('click', randomOptions);
+document.getElementById('resetBtn').addEventListener('click', resetOptions);
 let reset = false;
 
 let optionBtn = document.getElementById('optionsBtn');
@@ -113,32 +113,26 @@ function toggleOptions() {
 }
 
 function resetOptions() {
-    if (reset) {
-        for (let i = 0; i < options.length; i++) {
-            options[i].childNodes[3].innerHTML = 0;
-        }
-        reset = false;
-        resetBtn.innerHTML = "Randomise";
-        changedOptions = false;
-    } else {
-        for (let i = 0; i < options.length; i++) {
-            if (Math.random() >= 0.5 && Math.random() < 0.9) {
-                options[i].childNodes[3].innerHTML = Math.round(Math.random() * 1);
-            }
-            else if (Math.random() >= 0.9 && Math.random() < 0.95) {
-                options[i].childNodes[3].innerHTML = Math.round(Math.random() * 2);
-            }
-            else if (Math.random() > 0.95 && Math.random() < 0.975) {
-                options[i].childNodes[3].innerHTML = Math.round(Math.random() * 3);
-            }
-            else if (Math.random() > 0.975) {
-                options[i].childNodes[3].innerHTML = Math.round(Math.random() * 5);
-            }
-        }
-        reset = true;
-        resetBtn.innerHTML = "Reset";
-        changedOptions = true;
+    for (let i = 0; i < options.length; i++) {
+        options[i].childNodes[3].innerHTML = 0;
     }
+    changedOptions = false;
+}
+
+function randomOptions() {
+    resetOptions();
+    for (let i = 0; i < options.length; i++) {
+        if (Math.random() >= 0.5 && Math.random() < 0.95) {
+            options[i].childNodes[3].innerHTML = Math.round(Math.random() * 1);
+        }
+        else if (Math.random() >= 0.95 && Math.random() < 0.99) {
+            options[i].childNodes[3].innerHTML = Math.round(Math.random() * 2);
+        }
+        else if (Math.random() > 0.99) {
+            options[i].childNodes[3].innerHTML = Math.round(Math.random() * 3);
+        }
+    }
+    changedOptions = true;
 }
 
 //  ------------------  SNACKBAR  ------------------  //
@@ -195,7 +189,7 @@ function checkType() {
             treasureText.innerHTML = rollIndividual();
         } else {
             for (let i = 0; i < numberTotal; i++) {
-                if (i === 0){
+                if (i === 0) {
                     treasureText.innerHTML = rollIndividual();
                 } else {
                     treasureText.innerHTML += " + " + rollIndividual();
@@ -337,6 +331,7 @@ function removeTable() {
 }
 
 function addText() {
+    console.log(parsedArray);
     for (n = 0; n < parsedArray.length; n++) {
         if (n === 0) {
             treasureText.innerHTML += parsedArray[0];
