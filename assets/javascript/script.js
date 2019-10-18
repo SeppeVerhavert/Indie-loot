@@ -41,6 +41,7 @@ let parsedArray = [];
 let minusBtn = document.getElementsByClassName('fa-minus-circle');
 let plusBtn = document.getElementsByClassName('fa-plus-circle');
 let options = document.getElementsByClassName('optionBox');
+let numberTotal = 0;
 
 
 //  -------------------------------------   FUNCTIONS   -------------------------------------  //
@@ -143,7 +144,7 @@ function resetOptions() {
 //  ------------------  SNACKBAR  ------------------  //
 
 function calculateNumber() {
-    let numberTotal = 0;
+    numberTotal = 0;
     for (let i = 0; i < options.length; i++) {
         numberTotal += parseInt(options[i].childNodes[3].innerHTML);
     }
@@ -158,7 +159,7 @@ function showSnackbar() {
     var x = document.getElementById("snackbar");
     if (changedOptions) {
         changedOptions = false;
-        x.innerHTML = "You looted " + calculateNumber() + " times";
+        x.innerHTML = "You looted " + numberTotal + " times";
         x.className = "show";
         setTimeout(function () { x.className = x.className.replace("show", ""); }, 2000);
     } else {
@@ -189,7 +190,18 @@ function generateTreasure() {
 
 function checkType() {
     if (radioType.checked) {
-        treasureText.innerHTML = rollIndividual();
+        calculateNumber();
+        if (numberTotal <= 1) {
+            treasureText.innerHTML = rollIndividual();
+        } else {
+            for (let i = 0; i < numberTotal; i++) {
+                if (i === 0){
+                    treasureText.innerHTML = rollIndividual();
+                } else {
+                    treasureText.innerHTML += " + " + rollIndividual();
+                }
+            }
+        }
         showSnackbar();
     } else {
         treasureText.innerHTML = rollHoard();
