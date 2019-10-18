@@ -1,5 +1,4 @@
-
-//      SLIDERS       //
+//  -------------------------------------   VARIABLES   -------------------------------------  //
 
 
 let crArray = [
@@ -10,17 +9,20 @@ let crArray = [
 ];
 
 
-//  -------------------------------------   VARIABLES   -------------------------------------  //
-
-
 let radioType = document.getElementById('radioType');
 
 let crSlider = document.getElementById('crRange');
 let crText = document.getElementById('crText');
 crSlider.addEventListener('input', showCr);
 
-document.getElementById('optionsBtn').addEventListener('click', toggleOptions);
-optionsDiv = document.getElementById('options');
+let resetBtn = document.getElementById('resetBtn')
+resetBtn.addEventListener('click', resetOptions);
+let reset = false;
+
+let optionBtn = document.getElementById('optionsBtn');
+optionBtn.addEventListener('click', toggleOptions);
+
+optionsDiv = document.getElementsByClassName('optionContainer')[0];
 let toggle = true;
 let changedOptions = false;
 
@@ -44,10 +46,24 @@ let options = document.getElementsByClassName('optionBox');
 //  -------------------------------------   FUNCTIONS   -------------------------------------  //
 
 
+//  ------------------  TEST FUNCTION  ------------------  //
+
+function test() {
+    for (let i = 0; i <= 100; i++) {
+        generateTreasure();
+        console.log(treasureText.innerHTML);
+        console.log(" ");
+    }
+    console.log("finish test");
+}
+
+//  ------------------  JSON FETCH  ------------------  //
+
 fetch("https://raw.githubusercontent.com/SeppeVerhavert/Treasure-generator/master/library.json")
     .then(response => response.json())
     .then(json => library = json);
 
+//  --------------  OPTIONS  --------------  //
 
 for (let i = 0; i < minusBtn.length; i++) {
     minusBtn[i].addEventListener('click', substractNumber);
@@ -63,6 +79,7 @@ function substractNumber() {
         let newnumber = number.innerHTML - 1;
         number.innerHTML = newnumber;
         changedOptions = true;
+        reset = true;
     } else {
         return;
     }
@@ -74,17 +91,65 @@ function addNumber() {
         let newnumber = parseInt(number.innerHTML) + 1;
         number.innerHTML = newnumber;
         changedOptions = true;
+        reset = true;
     } else {
         return;
     }
 }
 
+function toggleOptions() {
+    if (toggle === true) {
+        toggle = false;
+        optionsDiv.style.display = "none";
+        optionBtn.innerHTML = "Show options";
+    } else {
+        toggle = true;
+        optionsDiv.style.display = "block";
+        optionBtn.innerHTML = "Hide options";
+    }
+}
+
+function resetOptions() {
+    if (reset) {
+        for (let i = 0; i < options.length; i++) {
+            options[i].childNodes[3].innerHTML = 0;
+        }
+        reset = false;
+        resetBtn.innerHTML = "Randomise";
+        changedOptions = false;
+    } else {
+        for (let i = 0; i < options.length; i++) {
+            if (Math.random() >= 0.5 && Math.random() < 0.9) {
+                options[i].childNodes[3].innerHTML = Math.round(Math.random() * 1);
+            }
+            else if (Math.random() >= 0.9 && Math.random() < 0.95) {
+                options[i].childNodes[3].innerHTML = Math.round(Math.random() * 2);
+            }
+            else if (Math.random() > 0.95 && Math.random() < 0.975) {
+                options[i].childNodes[3].innerHTML = Math.round(Math.random() * 3);
+            }
+            else if (Math.random() > 0.975) {
+                options[i].childNodes[3].innerHTML = Math.round(Math.random() * 5);
+            }
+        }
+        reset = true;
+        resetBtn.innerHTML = "Reset";
+        changedOptions = true;
+    }
+}
+
+//  ------------------  SNACKBAR  ------------------  //
+
 function calculateNumber() {
     let numberTotal = 0;
-    for (let i = 0; i < options.length; i++){
+    for (let i = 0; i < options.length; i++) {
         numberTotal += parseInt(options[i].childNodes[3].innerHTML);
     }
-    return numberTotal;
+    if (numberTotal === 0) {
+        return 1;
+    } else {
+        return numberTotal;
+    }
 }
 
 function showSnackbar() {
@@ -99,18 +164,14 @@ function showSnackbar() {
     }
 }
 
+//  ------------------  SHOW CR  ------------------  //
+
 function showCr() {
     let range = document.getElementById("crRange").value;
     crText.innerHTML = "Challenge Rating " + crArray[range];
 }
 
-function test() {
-    for (let i = 0; i <= 9; i++) {
-        generateTreasure();
-        console.log(treasureText.innerHTML);
-    }
-    console.log("finish test");
-}
+//  ------------------  MAIN FUNCTION  ------------------  //
 
 function generateTreasure() {
     treasureText.style.display = "block";
@@ -121,17 +182,7 @@ function generateTreasure() {
     rollForArrays();
     removeTable();
     addText();
-    extraOptions();
-}
-
-function toggleOptions() {
-    if (toggle === true) {
-        toggle = false;
-        optionsDiv.style.display = "none";
-    } else {
-        toggle = true;
-        optionsDiv.style.display = "block";
-    }
+    addOptions();
 }
 
 function checkType() {
@@ -299,7 +350,7 @@ function rollTable(element) {
     return element[tableroll];
 }
 
-function extraOptions() {
+function addOptions() {
     for (let i = 0; i < options.length; i++) {
         let amount = parseInt(options[i].childNodes[3].innerHTML);
         if (amount > 0) {
