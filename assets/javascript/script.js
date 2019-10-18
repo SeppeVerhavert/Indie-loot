@@ -35,8 +35,40 @@ let bookBox = document.getElementById('books');
 
 let parsedArray = [];
 
+let minusBtn = document.getElementsByClassName('fa-minus-circle');
+let plusBtn = document.getElementsByClassName('fa-plus-circle');
+
 
 //  -------------------------------------   FUNCTIONS   -------------------------------------  //
+
+
+for (let i = 0; i < minusBtn.length; i++) {
+    minusBtn[i].addEventListener('click', substractNumber);
+}
+
+for (let i = 0; i < plusBtn.length; i++) {
+    plusBtn[i].addEventListener('click', addNumber);
+}
+
+function substractNumber() {
+    let number = this.parentNode.childNodes[3];
+    if (number.innerHTML > 0){
+        let newnumber = number.innerHTML -1;
+        number.innerHTML = newnumber;
+    } else {
+        return;
+    }
+}
+
+function addNumber() {
+    let number = this.parentNode.childNodes[3];
+    if (number.innerHTML <= 8){
+        let newnumber = parseInt(number.innerHTML) +1;
+        number.innerHTML = newnumber;
+    } else {
+        return;
+    }
+}
 
 
 fetch("https://raw.githubusercontent.com/SeppeVerhavert/Treasure-generator/master/library.json")
@@ -49,7 +81,7 @@ function showCr() {
 }
 
 function test() {
-    for(let i=0; i<=9;i++){
+    for (let i = 0; i <= 9; i++) {
         generateTreasure();
         console.log(treasureText.innerHTML);
     }
@@ -57,7 +89,7 @@ function test() {
 }
 
 function generateTreasure() {
-    treasureText.style.display="block";
+    treasureText.style.display = "block";
     toggle = true;
     toggleOptions();
     checkType();
