@@ -100,7 +100,7 @@
         "1d6 pp",
         "1d6 pp",
         "1d6 pp",
-        "1d6 p"
+        "1d6 pp"
     ],
     "IndivCR510Array": [
         "4d6 x 100 cp + 1d6 x 10 ep",
@@ -202,7 +202,7 @@
         "2d6 x 10 gp + 3d6 pp",
         "2d6 x 10 gp + 3d6 pp",
         "2d6 x 10 gp + 3d6 pp",
-        "2d6 x 10 gp + 3d6 p"
+        "2d6 x 10 gp + 3d6 pp"
     ],
     "IndivCR1116Array": [
         "4d6 x 100 sp + 1d6 x 100 gp",
@@ -304,7 +304,7 @@
         "2d6 x 100 gp + 2d6 x 10 pp",
         "2d6 x 100 gp + 2d6 x 10 pp",
         "2d6 x 100 gp + 2d6 x 10 pp",
-        "2d6 x 100 gp + 2d6 x 10 p"
+        "2d6 x 100 gp + 2d6 x 10 pp"
     ],
     "IndivCR17Array": [
         "2d6 x 1000 ep + 8d6 x 100 gp",
