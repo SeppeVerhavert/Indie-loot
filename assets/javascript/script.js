@@ -122,14 +122,14 @@ function resetOptions() {
 function randomOptions() {
     resetOptions();
     for (let i = 0; i < options.length; i++) {
-        if (Math.random() >= 0.5 && Math.random() < 0.95) {
-            options[i].childNodes[3].innerHTML = Math.round(Math.random() * 1);
+        if (Math.random() >= 0.6 && Math.random() < 0.95) {
+            options[i].childNodes[3].innerHTML = 1;
         }
         else if (Math.random() >= 0.95 && Math.random() < 0.99) {
-            options[i].childNodes[3].innerHTML = Math.round(Math.random() * 2);
+            options[i].childNodes[3].innerHTML = 2;
         }
         else if (Math.random() > 0.99) {
-            options[i].childNodes[3].innerHTML = Math.round(Math.random() * 3);
+            options[i].childNodes[3].innerHTML = 3;
         }
     }
     changedOptions = true;
@@ -332,13 +332,110 @@ function removeTable() {
 }
 
 function mergeMoney() {
-    console.log(parsedArray);
-    let moneyArray = [];
-    for (let j = 0; j < parsedArray.length; j++) {
-        if (parsedArray[j].match(/\d+\s[c(change to csegp?)][p]\s/)) {
-            moneyArray.push(parsedArray[j]);
-            console.log(moneyArray);
+    totalValue = copperValue() + silverValue() + electrumValue() + goldValue() + platinumValue() + treasureText.innerHTML;
+    treasureText.innerHTML = totalValue.slice(0, totalValue.length-2);
+}
+
+function copperValue() {
+    let copperValue = 0;
+    for (let i = 0; i < 5; i++) {
+        for (let j = 0; j < parsedArray.length; j++) {
+            if (parsedArray[j].match(/\d+\s[c][p]\s/)) {
+                let newArray = parsedArray[j].split(' ');
+                if (newArray[0] !== 0) {
+                    copperValue += parseInt(newArray[0]);
+                    parsedArray.splice(j, 1);
+                }
+            }
         }
+    }
+    if (copperValue === 0) {
+        let string = "";
+        return string;
+    } else {
+        return copperValue += " cp, ";
+    }
+}
+
+function silverValue() {
+    let silverValue = 0;
+    for (let i = 0; i < 5; i++) {
+        for (let j = 0; j < parsedArray.length; j++) {
+            if (parsedArray[j].match(/\d+\s[s][p]\s/)) {
+                let newArray = parsedArray[j].split(' ');
+                if (newArray[0] !== 0) {
+                    silverValue += parseInt(newArray[0]);
+                    parsedArray.splice(j, 1);
+                }
+            }
+        }
+    }
+    if (silverValue === 0) {
+        let string = "";
+        return string;
+    } else {
+        return silverValue += " sp, ";
+    }
+}
+
+function electrumValue() {
+    let electrumValue = 0;
+    for (let i = 0; i < 5; i++) {
+        for (let j = 0; j < parsedArray.length; j++) {
+            if (parsedArray[j].match(/\d+\s[e][p]\s/)) {
+                let newArray = parsedArray[j].split(' ');
+                if (newArray[0] !== 0) {
+                    electrumValue += parseInt(newArray[0]);
+                    parsedArray.splice(j, 1);
+                }
+            }
+        }
+    }
+    if (electrumValue === 0) {
+        let string = "";
+        return string;
+    } else {
+        return electrumValue += " ep, ";
+    }
+}
+
+function goldValue() {
+    let goldValue = 0;
+    for (let i = 0; i < 5; i++) {
+        for (let j = 0; j < parsedArray.length; j++) {
+            if (parsedArray[j].match(/\d+\s[g][p]\s/)) {
+                let newArray = parsedArray[j].split(' ');
+                if (newArray[0] !== 0) {
+                    goldValue += parseInt(newArray[0]);
+                    parsedArray.splice(j, 1);
+                }
+            }
+        }
+    }
+    if (goldValue === 0) {
+        let string = "";
+        return string;
+    } else {
+        return goldValue += " gp, ";
+    }
+}
+
+function platinumValue() {
+    let platinumValue = 0;
+    for (let i = 0; i < 5; i++) {
+        for (let j = 0; j < parsedArray.length; j++) {
+            if (parsedArray[j].match(/\d+\s[p][p]\s/)) {
+                let newArray = parsedArray[j].split(' ');
+                platinumValue += parseInt(newArray[0]);
+                parsedArray.splice(j, 1);
+            }
+        }
+    }
+    if (platinumValue === 0) {
+        let string = "";
+        return string;
+    } else {
+        return platinumValue += " pp, ";
     }
 }
 
