@@ -178,6 +178,7 @@ function generateTreasure() {
     parseValue();
     rollForArrays();
     removeTable();
+    mergeMoney();
     addText();
     addOptions();
 }
@@ -280,11 +281,11 @@ function rollForArrays() {
             }
 
             if (parsedArray[i][1] === "cp" || parsedArray[i][1] === "sp" || parsedArray[i][1] === "ep" || parsedArray[i][1] === "gp" || parsedArray[i][1] === "pp") {
-                parsedArray[i] = rollTotal + " " + parsedArray[i][1];
+                parsedArray[i] = rollTotal + " " + parsedArray[i][1] + " ";
             }
 
             if (parsedArray[i][1] === "x") {
-                parsedArray[i] = rollTotal * parsedArray[i][2] + " " + parsedArray[i][3];
+                parsedArray[i] = rollTotal * parsedArray[i][2] + " " + parsedArray[i][3] + " ";
             }
             else if (parsedArray[i][3] === "art" || parsedArray[i][3] === "gems") {
                 let table = parsedArray[i][3] + parsedArray[i][1] + parsedArray[i][2];
@@ -330,8 +331,18 @@ function removeTable() {
     }
 }
 
-function addText() {
+function mergeMoney() {
     console.log(parsedArray);
+    let moneyArray = [];
+    for (let j = 0; j < parsedArray.length; j++) {
+        if (parsedArray[j].match(/\d+\s[c(change to csegp?)][p]\s/)) {
+            moneyArray.push(parsedArray[j]);
+            console.log(moneyArray);
+        }
+    }
+}
+
+function addText() {
     for (n = 0; n < parsedArray.length; n++) {
         if (n === 0) {
             treasureText.innerHTML += parsedArray[0];
