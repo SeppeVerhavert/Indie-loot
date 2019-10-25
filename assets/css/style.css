@@ -23,7 +23,7 @@ body {
 .slider {
     -webkit-appearance: none;
     appearance: none;
-    width: 90%;
+    width: 80%;
     height: 15px;
     border-radius: 5px;
     background: #d3d3d3;
@@ -144,8 +144,11 @@ body {
     text-align: left;
 }
 
+.optionContainer .btn-group {
+    width: 100%;
+}
+
 .optionContainer .btn {
-    width: 48%;
     background-color: rgb(172, 172, 172);
 }
 

@@ -15,9 +15,26 @@ let crSlider = document.getElementById('crRange');
 let crText = document.getElementById('crText');
 crSlider.addEventListener('input', showCr);
 
-document.getElementById('randomBtn').addEventListener('click', randomOptions);
+document.getElementById('minusBtn').addEventListener('click', removeOptions);
+document.getElementById('plusBtn').addEventListener('click', addOptions);
 document.getElementById('resetBtn').addEventListener('click', resetOptions);
 let reset = false;
+
+let trinketNumber = document.getElementById('trinketnumber');
+let gearnumber = document.getElementById('gearnumber');
+let weaponnumber = document.getElementById('weaponnumber');
+let toolnumber = document.getElementById('toolnumber');
+let componentnumber = document.getElementById('componentnumber');
+let booknumber = document.getElementById('booknumber');
+
+let numberArray = [
+    "trinketNumber",
+    "gearnumber",
+    "weaponnumber",
+    "toolnumber",
+    "componentnumber",
+    "booknumber"
+];
 
 let optionBtn = document.getElementById('optionsBtn');
 optionBtn.addEventListener('click', toggleOptions);
@@ -42,6 +59,7 @@ let minusBtn = document.getElementsByClassName('fa-minus-circle');
 let plusBtn = document.getElementsByClassName('fa-plus-circle');
 let options = document.getElementsByClassName('optionBox');
 let numberTotal = 0;
+let individual = true;
 
 
 //  -------------------------------------   FUNCTIONS   -------------------------------------  //
@@ -112,27 +130,35 @@ function toggleOptions() {
     }
 }
 
+function removeOptions() {
+    let randNumber = Math.floor(Math.random()*6);
+    let number = parseInt(options[randNumber].childNodes[3].innerHTML);
+    if (number === 0) {
+        removeOptions();
+    } else {
+        number -= 1;
+        options[randNumber].childNodes[3].innerHTML = number;
+    }
+    changedOptions = true;
+}
+
+function addOptions() {
+    let randNumber = Math.floor(Math.random()*6);
+    let number = parseInt(options[randNumber].childNodes[3].innerHTML);
+    if (number === 9) {
+        return
+    } else {
+        number += 1;
+        options[randNumber].childNodes[3].innerHTML = number;
+    }
+    changedOptions = true;
+}
+
 function resetOptions() {
     for (let i = 0; i < options.length; i++) {
         options[i].childNodes[3].innerHTML = 0;
     }
     changedOptions = false;
-}
-
-function randomOptions() {
-    resetOptions();
-    for (let i = 0; i < options.length; i++) {
-        if (Math.random() >= 0.6 && Math.random() < 0.95) {
-            options[i].childNodes[3].innerHTML = 1;
-        }
-        else if (Math.random() >= 0.95 && Math.random() < 0.99) {
-            options[i].childNodes[3].innerHTML = 2;
-        }
-        else if (Math.random() > 0.99) {
-            options[i].childNodes[3].innerHTML = 3;
-        }
-    }
-    changedOptions = true;
 }
 
 //  ------------------  SNACKBAR  ------------------  //
@@ -180,7 +206,7 @@ function generateTreasure() {
     removeTable();
     mergeMoney();
     addText();
-    addOptions();
+    implementOptions();
 }
 
 function checkType() {
@@ -188,6 +214,7 @@ function checkType() {
         calculateNumber();
         if (numberTotal <= 1) {
             treasureText.innerHTML = rollIndividual();
+            individual = true;
         } else {
             for (let i = 0; i < numberTotal; i++) {
                 if (i === 0) {
@@ -196,6 +223,7 @@ function checkType() {
                     treasureText.innerHTML += " + " + rollIndividual();
                 }
             }
+            individual = false;
         }
         showSnackbar();
     } else {
@@ -332,8 +360,8 @@ function removeTable() {
 }
 
 function mergeMoney() {
-    totalValue = copperValue() + silverValue() + electrumValue() + goldValue() + platinumValue() + treasureText.innerHTML;
-    treasureText.innerHTML = totalValue.slice(0, totalValue.length-2);
+    totalValue = copperValue() + silverValue() + electrumValue() + goldValue() + platinumValue();
+    parsedArray.unshift(totalValue.slice(0, totalValue.length-2));
 }
 
 function copperValue() {
@@ -467,7 +495,7 @@ function rollTable(element) {
     return element[tableroll];
 }
 
-function addOptions() {
+function implementOptions() {
     for (let i = 0; i < options.length; i++) {
         let amount = parseInt(options[i].childNodes[3].innerHTML);
         if (amount > 0) {
