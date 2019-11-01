@@ -23,7 +23,7 @@ let reset = false;
 let trinketNumber = document.getElementById('trinketnumber');
 let gearnumber = document.getElementById('gearnumber');
 let weaponnumber = document.getElementById('weaponnumber');
-let toolnumber = document.getElementById('toolnumber');
+let goodnumber = document.getElementById('goodnumber');
 let componentnumber = document.getElementById('componentnumber');
 let booknumber = document.getElementById('booknumber');
 
@@ -31,10 +31,13 @@ let numberArray = [
     "trinketNumber",
     "gearnumber",
     "weaponnumber",
-    "toolnumber",
+    "goodnumber",
     "componentnumber",
     "booknumber"
 ];
+
+let goldBtn = document.getElementById('goldBtn');
+goldBtn.addEventListener('click', convertGold);
 
 let optionBtn = document.getElementById('optionsBtn');
 optionBtn.addEventListener('click', toggleOptions);
@@ -49,7 +52,7 @@ let treasureText = document.getElementById('treasureText');
 let trinketBox = document.getElementById('trinkets');
 let gearBox = document.getElementById('gear');
 let weaponBox = document.getElementById('weapons');
-let toolBox = document.getElementById('tools');
+let goodBox = document.getElementById('goods');
 let componentBox = document.getElementById('components');
 let bookBox = document.getElementById('books');
 
@@ -131,7 +134,7 @@ function toggleOptions() {
 }
 
 function removeOptions() {
-    let randNumber = Math.floor(Math.random()*6);
+    let randNumber = Math.floor(Math.random() * 6);
     let number = parseInt(options[randNumber].childNodes[3].innerHTML);
     if (number === 0) {
         removeOptions();
@@ -143,10 +146,10 @@ function removeOptions() {
 }
 
 function addOptions() {
-    let randNumber = Math.floor(Math.random()*6);
+    let randNumber = Math.floor(Math.random() * 6);
     let number = parseInt(options[randNumber].childNodes[3].innerHTML);
     if (number === 9) {
-        return
+        addOptions();
     } else {
         number += 1;
         options[randNumber].childNodes[3].innerHTML = number;
@@ -194,7 +197,7 @@ function showCr() {
     crText.innerHTML = "Challenge Rating " + crArray[range];
 }
 
-//  ------------------  MAIN FUNCTION  ------------------  //
+//  -------------------------------------   MAIN FUNCTION   -------------------------------------  //
 
 function generateTreasure() {
     treasureText.style.display = "block";
@@ -208,6 +211,8 @@ function generateTreasure() {
     addText();
     implementOptions();
 }
+
+//  ------------------  INDIVIUAL OR HOARD  ------------------  //
 
 function checkType() {
     if (radioType.checked) {
@@ -268,6 +273,8 @@ function rollHoard() {
         return library.TrhoardCR17Array[rand];
     }
 }
+
+//  ------------------  MAKE ROLLS ON TABLE  ------------------  //
 
 function parseValue() {
     let string = treasureText.innerHTML;
@@ -359,9 +366,48 @@ function removeTable() {
     }
 }
 
+//  ------------------  ROLL FOR GOLD  ------------------  //
+
+function convertGold() {
+    if (goldBtn.classList[1] === "btn-secondary") {
+        goldBtn.classList.remove("btn-secondary");
+        goldBtn.classList.add("btn-warning");
+    }
+    else if (goldBtn.classList[1] === "btn-warning") {
+        goldBtn.classList.remove("btn-warning");
+        goldBtn.classList.add("btn-secondary");
+    }
+}
+
 function mergeMoney() {
-    totalValue = copperValue() + silverValue() + electrumValue() + goldValue() + platinumValue();
-    parsedArray.unshift(totalValue.slice(0, totalValue.length-2));
+    let totalValue = "";
+    if (goldBtn.classList[1] === "btn-warning") {
+        totalValue = (Math.floor(copperValue() / 100)) + (Math.floor(silverValue() / 10)) + (Math.floor(electrumValue() / 2)) + goldValue() + (platinumValue() * 10) + " gp";
+        parsedArray.unshift(totalValue);
+    }
+    else {
+        let cp = copperValue();
+        let sp = silverValue();
+        let ep = electrumValue();
+        let gp = goldValue();
+        let pp = platinumValue();
+        if (cp > 0) {
+            totalValue += cp + " cp, "
+        }
+        if (sp > 0) {
+            totalValue += sp + " sp, "
+        }
+        if (ep > 0) {
+            totalValue += ep + " ep, "
+        }
+        if (gp > 0) {
+            totalValue += gp + " gp, "
+        }
+        if (pp > 0) {
+            totalValue += pp + " pp, "
+        }
+        parsedArray.unshift(totalValue.slice(0, totalValue.length - 2));
+    }
 }
 
 function copperValue() {
@@ -377,12 +423,7 @@ function copperValue() {
             }
         }
     }
-    if (copperValue === 0) {
-        let string = "";
-        return string;
-    } else {
-        return copperValue += " cp, ";
-    }
+    return copperValue;
 }
 
 function silverValue() {
@@ -398,12 +439,7 @@ function silverValue() {
             }
         }
     }
-    if (silverValue === 0) {
-        let string = "";
-        return string;
-    } else {
-        return silverValue += " sp, ";
-    }
+    return silverValue;
 }
 
 function electrumValue() {
@@ -419,12 +455,7 @@ function electrumValue() {
             }
         }
     }
-    if (electrumValue === 0) {
-        let string = "";
-        return string;
-    } else {
-        return electrumValue += " ep, ";
-    }
+    return electrumValue;
 }
 
 function goldValue() {
@@ -440,12 +471,7 @@ function goldValue() {
             }
         }
     }
-    if (goldValue === 0) {
-        let string = "";
-        return string;
-    } else {
-        return goldValue += " gp, ";
-    }
+    return goldValue;
 }
 
 function platinumValue() {
@@ -459,13 +485,10 @@ function platinumValue() {
             }
         }
     }
-    if (platinumValue === 0) {
-        let string = "";
-        return string;
-    } else {
-        return platinumValue += " pp, ";
-    }
+    return platinumValue;
 }
+
+//  ------------------  APPLY ROLLS TO TEXT  ------------------  //
 
 function addText() {
     for (n = 0; n < parsedArray.length; n++) {
@@ -476,6 +499,8 @@ function addText() {
         }
     }
 }
+
+//  ------------------  INSIDER FUNCTIONS  ------------------  //
 
 function searchJson(element) {
     for (let i = 0; i < Object.keys(library).length; i++) {
@@ -495,6 +520,8 @@ function rollTable(element) {
     return element[tableroll];
 }
 
+//  ------------------  ADD OPTIONS  ------------------  //
+
 function implementOptions() {
     for (let i = 0; i < options.length; i++) {
         let amount = parseInt(options[i].childNodes[3].innerHTML);
@@ -503,11 +530,11 @@ function implementOptions() {
                 if (i === 0) {
                     treasureText.innerHTML += "<br><hr>" + library.trinketArray[rolld(library.trinketArray.length - 1)];
                 } else if (i === 1) {
-                    treasureText.innerHTML += "<br><hr>" + library.toolsArray[rolld(library.toolsArray.length - 1)];
-                } else if (i === 2) {
                     treasureText.innerHTML += "<br><hr>" + library.gearArray[rolld(library.gearArray.length - 1)];
-                } else if (i === 3) {
+                } else if (i === 2) {
                     treasureText.innerHTML += "<br><hr>" + library.weaponsarmorArray[rolld(library.weaponsarmorArray.length - 1)];
+                } else if (i === 3) {
+                    treasureText.innerHTML += "<br><hr>" + library.goodsArray[rolld(library.goodsArray.length - 1)];
                 } else if (i === 4) {
                     treasureText.innerHTML += "<br><hr>" + library.componentArray[rolld(library.componentArray.length - 1)];
                 } else if (i === 5) {

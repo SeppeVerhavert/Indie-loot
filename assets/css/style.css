@@ -148,8 +148,16 @@ body {
     width: 100%;
 }
 
+#goldBtn {
+    width: 100%;
+}
+
 .optionContainer .btn {
     background-color: rgb(172, 172, 172);
+}
+
+.optionContainer .btn-warning {
+    background-color: rgb(255, 166, 0)
 }
 
 /* The container */
