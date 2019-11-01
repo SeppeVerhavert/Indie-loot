@@ -5,6 +5,7 @@
 
 body {
     background-color: rgba(233, 233, 233, 0.705);
+    margin-bottom: 8%;
 }
 
 .container {
@@ -12,7 +13,6 @@ body {
     margin: auto;
     padding: 0;
     margin-top: 8%;
-    margin-bottom: 8%;
     text-align: center;
     font-size: 20px;
 }
