@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +11,10 @@
 
         gtag('config', 'G-B60468HTBC');
     </script>
-    <meta http-equiv="Content-Type" content="text/html"; charset=utf-8" />
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/0a19f88285.js" crossorigin="anonymous"></script>
+    <!-- Meta Tags -->
+    <meta http-equiv="Content-Type" content="text/html" ; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Indie Loot - 5e D&D Treasure Generator</title>
@@ -44,35 +46,54 @@
                         <input type="range" min="0" max="3" value="0" step="1" class="slider" id="crRange">
                     </div>
                 </div>
-                <div class="checkboxContainer">
-                    <label class="checkBox">Interesting Trinkets
-                        <input id="trinkets" type="checkbox" checked="checked">
-                        <span class="checkBoxmark"></span>
-                    </label>
-                    <label class="checkBox">Adventuring Gear
-                        <input id="gear" type="checkbox">
-                        <span class="checkBoxmark"></span>
-                    </label>
-                    <label class="checkBox">Weapons & Armor
-                        <input id="weapons" type="checkbox">
-                        <span class="checkBoxmark"></span>
-                    </label>
-                    <label class="checkBox">Tools, Kits & Sets
-                        <input id="tools" type="checkbox">
-                        <span class="checkBoxmark"></span>
-                    </label>
-                    <label class="checkBox">Spell components
-                        <input id="components" type="checkbox">
-                        <span class="checkBoxmark"></span>
-                    </label>
-                    <label class="checkBox">Books & Tomes
-                        <input id="books" type="checkbox">
-                        <span class="checkBoxmark"></span>
-                    </label>
+                <div class="optionContainer">
+                    <div class="optionBox">
+                        <i class="fas fa-minus-circle"></i>
+                        <span id="trinketnumber">0</span>
+                        <i class="fas fa-plus-circle"></i>
+                        <p>Interesting Trinkets</p>
+                    </div>
+                    <div class="optionBox">
+                        <i class="fas fa-minus-circle"></i>
+                        <span id="gearnumber">0</span>
+                        <i class="fas fa-plus-circle"></i>
+                        <p>Adventuring Gear</p>
+                    </div>
+                    <div class="optionBox">
+                        <i class="fas fa-minus-circle"></i>
+                        <span id="weaponnumber">0</span>
+                        <i class="fas fa-plus-circle"></i>
+                        <p>Weapons & Armor</p>
+                    </div>
+                    <div class="optionBox">
+                        <i class="fas fa-minus-circle"></i>
+                        <span id="goodnumber">0</span>
+                        <i class="fas fa-plus-circle"></i>
+                        <p>Trade Goods</p>
+                    </div>
+                    <div class="optionBox">
+                        <i class="fas fa-minus-circle"></i>
+                        <span id="componentnumber">0</span>
+                        <i class="fas fa-plus-circle"></i>
+                        <p>Spell Components</p>
+                    </div>
+                    <div class="optionBox">
+                        <i class="fas fa-minus-circle"></i>
+                        <span id="booknumber">0</span>
+                        <i class="fas fa-plus-circle"></i>
+                        <p>Books & Tomes</p>
+                    </div>
+                    <div class="btn-group" role="group" aria-label="add/substract">
+                        <button type="button" class="btn btn-secondary" id="minusBtn">-</button>
+                        <button type="button" class="btn btn-secondary" id="resetBtn">Reset</button>
+                        <button type="button" class="btn btn-secondary" id="plusBtn">+</button>
+                    </div>
+                    <button type="button" class="btn btn-secondary" id="goldBtn">Convert to Gold</button>
                 </div>
             </div>
-            <button type="button" class="btn btn-secondary" id="optionsBtn">Show/hide options</button>
+            <button type="button" class="btn btn-secondary" id="optionsBtn">Hide options</button>
             <button type="button" class="btn btn-danger" id="generateBtn">Generate loot</button>
+            <div id="snackbar"></div>
             <div class="textfield">
                 <p id="treasureText"></p>
             </div>

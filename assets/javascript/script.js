@@ -1,5 +1,4 @@
-
-//      SLIDERS       //
+//  -------------------------------------   VARIABLES   -------------------------------------  //
 
 
 let crArray = [
@@ -10,18 +9,42 @@ let crArray = [
 ];
 
 
-//  -------------------------------------   VARIABLES   -------------------------------------  //
-
-
 let radioType = document.getElementById('radioType');
 
 let crSlider = document.getElementById('crRange');
 let crText = document.getElementById('crText');
 crSlider.addEventListener('input', showCr);
 
-document.getElementById('optionsBtn').addEventListener('click', toggleOptions);
-optionsDiv = document.getElementById('options');
+document.getElementById('minusBtn').addEventListener('click', removeOptions);
+document.getElementById('plusBtn').addEventListener('click', addOptions);
+document.getElementById('resetBtn').addEventListener('click', resetOptions);
+let reset = false;
+
+let trinketNumber = document.getElementById('trinketnumber');
+let gearnumber = document.getElementById('gearnumber');
+let weaponnumber = document.getElementById('weaponnumber');
+let goodnumber = document.getElementById('goodnumber');
+let componentnumber = document.getElementById('componentnumber');
+let booknumber = document.getElementById('booknumber');
+
+let numberArray = [
+    "trinketNumber",
+    "gearnumber",
+    "weaponnumber",
+    "goodnumber",
+    "componentnumber",
+    "booknumber"
+];
+
+let goldBtn = document.getElementById('goldBtn');
+goldBtn.addEventListener('click', convertGold);
+
+let optionBtn = document.getElementById('optionsBtn');
+optionBtn.addEventListener('click', toggleOptions);
+
+optionsDiv = document.getElementsByClassName('optionContainer')[0];
 let toggle = true;
+let changedOptions = false;
 
 document.getElementById('generateBtn').addEventListener('click', generateTreasure);
 let treasureText = document.getElementById('treasureText');
@@ -29,50 +52,185 @@ let treasureText = document.getElementById('treasureText');
 let trinketBox = document.getElementById('trinkets');
 let gearBox = document.getElementById('gear');
 let weaponBox = document.getElementById('weapons');
-let toolBox = document.getElementById('tools');
+let goodBox = document.getElementById('goods');
 let componentBox = document.getElementById('components');
 let bookBox = document.getElementById('books');
 
 let parsedArray = [];
 
+let minusBtn = document.getElementsByClassName('fa-minus-circle');
+let plusBtn = document.getElementsByClassName('fa-plus-circle');
+let options = document.getElementsByClassName('optionBox');
+let numberTotal = 0;
+let individual = true;
+
 
 //  -------------------------------------   FUNCTIONS   -------------------------------------  //
 
+
+//  ------------------  TEST FUNCTION  ------------------  //
+
+function test() {
+    for (let i = 0; i <= 100; i++) {
+        generateTreasure();
+        console.log(treasureText.innerHTML);
+        console.log(" ");
+    }
+    console.log("finish test");
+}
+
+//  ------------------  JSON FETCH  ------------------  //
 
 fetch("https://raw.githubusercontent.com/SeppeVerhavert/Treasure-generator/master/library.json")
     .then(response => response.json())
     .then(json => library = json);
 
-function showCr() {
-    let range = document.getElementById("crRange").value;
-    crText.innerHTML = "Challenge Rating " + crArray[range];
+//  --------------  OPTIONS  --------------  //
+
+for (let i = 0; i < minusBtn.length; i++) {
+    minusBtn[i].addEventListener('click', substractNumber);
 }
 
-function generateTreasure() {
-    treasureText.style.display="block";
-    toggle = true;
-    toggleOptions();
-    checkType();
-    parseValue();
-    rollForArrays();
-    removeTable();
-    addText();
-    extraOptions();
+for (let i = 0; i < plusBtn.length; i++) {
+    plusBtn[i].addEventListener('click', addNumber);
+}
+
+function substractNumber() {
+    let number = this.parentNode.childNodes[3];
+    if (number.innerHTML > 0) {
+        let newnumber = number.innerHTML - 1;
+        number.innerHTML = newnumber;
+        changedOptions = true;
+        reset = true;
+        resetBtn.innerHTML = "Reset";
+    } else {
+        return;
+    }
+}
+
+function addNumber() {
+    let number = this.parentNode.childNodes[3];
+    if (number.innerHTML <= 8) {
+        let newnumber = parseInt(number.innerHTML) + 1;
+        number.innerHTML = newnumber;
+        changedOptions = true;
+        reset = true;
+        resetBtn.innerHTML = "Reset";
+    } else {
+        return;
+    }
 }
 
 function toggleOptions() {
     if (toggle === true) {
         toggle = false;
         optionsDiv.style.display = "none";
+        optionBtn.innerHTML = "Show options";
     } else {
         toggle = true;
         optionsDiv.style.display = "block";
+        optionBtn.innerHTML = "Hide options";
     }
 }
 
+function removeOptions() {
+    let randNumber = Math.floor(Math.random() * 6);
+    let number = parseInt(options[randNumber].childNodes[3].innerHTML);
+    if (number === 0) {
+        removeOptions();
+    } else {
+        number -= 1;
+        options[randNumber].childNodes[3].innerHTML = number;
+    }
+    changedOptions = true;
+}
+
+function addOptions() {
+    let randNumber = Math.floor(Math.random() * 6);
+    let number = parseInt(options[randNumber].childNodes[3].innerHTML);
+    if (number === 9) {
+        addOptions();
+    } else {
+        number += 1;
+        options[randNumber].childNodes[3].innerHTML = number;
+    }
+    changedOptions = true;
+}
+
+function resetOptions() {
+    for (let i = 0; i < options.length; i++) {
+        options[i].childNodes[3].innerHTML = 0;
+    }
+    changedOptions = false;
+}
+
+//  ------------------  SNACKBAR  ------------------  //
+
+function calculateNumber() {
+    numberTotal = 0;
+    for (let i = 0; i < options.length; i++) {
+        numberTotal += parseInt(options[i].childNodes[3].innerHTML);
+    }
+    if (numberTotal === 0) {
+        return 1;
+    } else {
+        return numberTotal;
+    }
+}
+
+function showSnackbar() {
+    var x = document.getElementById("snackbar");
+    if (changedOptions) {
+        changedOptions = false;
+        x.innerHTML = "You looted " + numberTotal + " times";
+        x.className = "show";
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 2000);
+    } else {
+        return
+    }
+}
+
+//  ------------------  SHOW CR  ------------------  //
+
+function showCr() {
+    let range = document.getElementById("crRange").value;
+    crText.innerHTML = "Challenge Rating " + crArray[range];
+}
+
+//  -------------------------------------   MAIN FUNCTION   -------------------------------------  //
+
+function generateTreasure() {
+    treasureText.style.display = "block";
+    toggle = true;
+    toggleOptions();
+    checkType();
+    parseValue();
+    rollForArrays();
+    removeTable();
+    mergeMoney();
+    addText();
+    implementOptions();
+}
+
+//  ------------------  INDIVIUAL OR HOARD  ------------------  //
+
 function checkType() {
     if (radioType.checked) {
-        treasureText.innerHTML = rollIndividual();
+        calculateNumber();
+        if (numberTotal <= 1) {
+            treasureText.innerHTML = rollIndividual();
+            individual = true;
+        } else {
+            for (let i = 0; i < numberTotal; i++) {
+                if (i === 0) {
+                    treasureText.innerHTML = rollIndividual();
+                } else {
+                    treasureText.innerHTML += " + " + rollIndividual();
+                }
+            }
+            individual = false;
+        }
+        showSnackbar();
     } else {
         treasureText.innerHTML = rollHoard();
     }
@@ -116,6 +274,8 @@ function rollHoard() {
     }
 }
 
+//  ------------------  MAKE ROLLS ON TABLE  ------------------  //
+
 function parseValue() {
     let string = treasureText.innerHTML;
     let value = string.replace("and", "+ Roll").replace("once", "1d1 times").split(' ');
@@ -156,11 +316,11 @@ function rollForArrays() {
             }
 
             if (parsedArray[i][1] === "cp" || parsedArray[i][1] === "sp" || parsedArray[i][1] === "ep" || parsedArray[i][1] === "gp" || parsedArray[i][1] === "pp") {
-                parsedArray[i] = rollTotal + " " + parsedArray[i][1];
+                parsedArray[i] = rollTotal + " " + parsedArray[i][1] + " ";
             }
 
             if (parsedArray[i][1] === "x") {
-                parsedArray[i] = rollTotal * parsedArray[i][2] + " " + parsedArray[i][3];
+                parsedArray[i] = rollTotal * parsedArray[i][2] + " " + parsedArray[i][3] + " ";
             }
             else if (parsedArray[i][3] === "art" || parsedArray[i][3] === "gems") {
                 let table = parsedArray[i][3] + parsedArray[i][1] + parsedArray[i][2];
@@ -206,6 +366,130 @@ function removeTable() {
     }
 }
 
+//  ------------------  ROLL FOR GOLD  ------------------  //
+
+function convertGold() {
+    if (goldBtn.classList[1] === "btn-secondary") {
+        goldBtn.classList.remove("btn-secondary");
+        goldBtn.classList.add("btn-warning");
+    }
+    else if (goldBtn.classList[1] === "btn-warning") {
+        goldBtn.classList.remove("btn-warning");
+        goldBtn.classList.add("btn-secondary");
+    }
+}
+
+function mergeMoney() {
+    let totalValue = "";
+    if (goldBtn.classList[1] === "btn-warning") {
+        totalValue = (Math.floor(copperValue() / 100)) + (Math.floor(silverValue() / 10)) + (Math.floor(electrumValue() / 2)) + goldValue() + (platinumValue() * 10) + " gp";
+        parsedArray.unshift(totalValue);
+    }
+    else {
+        let cp = copperValue();
+        let sp = silverValue();
+        let ep = electrumValue();
+        let gp = goldValue();
+        let pp = platinumValue();
+        if (cp > 0) {
+            totalValue += cp + " cp, "
+        }
+        if (sp > 0) {
+            totalValue += sp + " sp, "
+        }
+        if (ep > 0) {
+            totalValue += ep + " ep, "
+        }
+        if (gp > 0) {
+            totalValue += gp + " gp, "
+        }
+        if (pp > 0) {
+            totalValue += pp + " pp, "
+        }
+        parsedArray.unshift(totalValue.slice(0, totalValue.length - 2));
+    }
+}
+
+function copperValue() {
+    let copperValue = 0;
+    for (let i = 0; i < 5; i++) {
+        for (let j = 0; j < parsedArray.length; j++) {
+            if (parsedArray[j].match(/\d+\s[c][p]\s/)) {
+                let newArray = parsedArray[j].split(' ');
+                if (newArray[0] !== 0) {
+                    copperValue += parseInt(newArray[0]);
+                    parsedArray.splice(j, 1);
+                }
+            }
+        }
+    }
+    return copperValue;
+}
+
+function silverValue() {
+    let silverValue = 0;
+    for (let i = 0; i < 5; i++) {
+        for (let j = 0; j < parsedArray.length; j++) {
+            if (parsedArray[j].match(/\d+\s[s][p]\s/)) {
+                let newArray = parsedArray[j].split(' ');
+                if (newArray[0] !== 0) {
+                    silverValue += parseInt(newArray[0]);
+                    parsedArray.splice(j, 1);
+                }
+            }
+        }
+    }
+    return silverValue;
+}
+
+function electrumValue() {
+    let electrumValue = 0;
+    for (let i = 0; i < 5; i++) {
+        for (let j = 0; j < parsedArray.length; j++) {
+            if (parsedArray[j].match(/\d+\s[e][p]\s/)) {
+                let newArray = parsedArray[j].split(' ');
+                if (newArray[0] !== 0) {
+                    electrumValue += parseInt(newArray[0]);
+                    parsedArray.splice(j, 1);
+                }
+            }
+        }
+    }
+    return electrumValue;
+}
+
+function goldValue() {
+    let goldValue = 0;
+    for (let i = 0; i < 5; i++) {
+        for (let j = 0; j < parsedArray.length; j++) {
+            if (parsedArray[j].match(/\d+\s[g][p]\s/)) {
+                let newArray = parsedArray[j].split(' ');
+                if (newArray[0] !== 0) {
+                    goldValue += parseInt(newArray[0]);
+                    parsedArray.splice(j, 1);
+                }
+            }
+        }
+    }
+    return goldValue;
+}
+
+function platinumValue() {
+    let platinumValue = 0;
+    for (let i = 0; i < 5; i++) {
+        for (let j = 0; j < parsedArray.length; j++) {
+            if (parsedArray[j].match(/\d+\s[p][p]\s/)) {
+                let newArray = parsedArray[j].split(' ');
+                platinumValue += parseInt(newArray[0]);
+                parsedArray.splice(j, 1);
+            }
+        }
+    }
+    return platinumValue;
+}
+
+//  ------------------  APPLY ROLLS TO TEXT  ------------------  //
+
 function addText() {
     for (n = 0; n < parsedArray.length; n++) {
         if (n === 0) {
@@ -215,6 +499,8 @@ function addText() {
         }
     }
 }
+
+//  ------------------  INSIDER FUNCTIONS  ------------------  //
 
 function searchJson(element) {
     for (let i = 0; i < Object.keys(library).length; i++) {
@@ -234,29 +520,27 @@ function rollTable(element) {
     return element[tableroll];
 }
 
-function extraOptions() {
-    if (trinketBox.checked) {
-        let length = library.trinketArray.length - 1;
-        treasureText.innerHTML += "<br><hr>" + library.trinketArray[rolld(length)];
-    }
-    if (gearBox.checked) {
-        let length = library.gearArray.length - 1;
-        treasureText.innerHTML += "<br><hr>" + library.gearArray[rolld(length)];
-    }
-    if (weaponBox.checked) {
-        let length = library.weaponsarmorArray.length - 1;
-        treasureText.innerHTML += "<br><hr>" + library.weaponsarmorArray[rolld(length)];
-    }
-    if (toolBox.checked) {
-        let length = library.toolsArray.length - 1;
-        treasureText.innerHTML += "<br><hr>" + library.toolsArray[rolld(length)];
-    }
-    if (componentBox.checked) {
-        let length = library.componentArray.length - 1;
-        treasureText.innerHTML += "<br><hr>" + library.componentArray[rolld(length)];
-    }
-    if (bookBox.checked) {
-        let length = library.bookArray.length - 1;
-        treasureText.innerHTML += "<br><hr>" + library.bookArray[rolld(length)];
+//  ------------------  ADD OPTIONS  ------------------  //
+
+function implementOptions() {
+    for (let i = 0; i < options.length; i++) {
+        let amount = parseInt(options[i].childNodes[3].innerHTML);
+        if (amount > 0) {
+            for (let j = 0; j < amount; j++) {
+                if (i === 0) {
+                    treasureText.innerHTML += "<br><hr>" + library.trinketArray[rolld(library.trinketArray.length - 1)];
+                } else if (i === 1) {
+                    treasureText.innerHTML += "<br><hr>" + library.gearArray[rolld(library.gearArray.length - 1)];
+                } else if (i === 2) {
+                    treasureText.innerHTML += "<br><hr>" + library.weaponsarmorArray[rolld(library.weaponsarmorArray.length - 1)];
+                } else if (i === 3) {
+                    treasureText.innerHTML += "<br><hr>" + library.goodsArray[rolld(library.goodsArray.length - 1)];
+                } else if (i === 4) {
+                    treasureText.innerHTML += "<br><hr>" + library.componentArray[rolld(library.componentArray.length - 1)];
+                } else if (i === 5) {
+                    treasureText.innerHTML += "<br><hr>" + library.bookArray[rolld(library.bookArray.length - 1)];
+                }
+            }
+        }
     }
 }
